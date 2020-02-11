@@ -1,0 +1,7 @@
+﻿
+
+### %kind% %type% %name%
+
+%briefdescription%
+
+%detaileddescription%
