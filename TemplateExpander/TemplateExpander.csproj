@@ -53,8 +53,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="all.xml" />
+    <Content Include="parameters.txt" />
     <Content Include="Templates\md.compounddef.txt" />
-    <Content Include="Templates\md.doxygen.txt" />
+    <Content Include="Templates\md.doxygenindex.txt" />
+    <Content Include="Templates\md.heading.txt" />
     <Content Include="Templates\md.itemizedlist.txt" />
     <Content Include="Templates\md.listitem.txt" />
     <Content Include="Templates\md.memberdef.txt" />
@@ -62,6 +64,7 @@
     <Content Include="Templates\md.parameterlist.txt" />
     <Content Include="Templates\md.sectiondef.txt" />
     <Content Include="Templates\md.simplesect.txt" />
+    <Content Include="Templates\md.title.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
