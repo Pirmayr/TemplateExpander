@@ -1,7 +1,5 @@
 # interface 3DEngine
 
-%title%
-
 #### remark
 
 Stellt unter Anderem folgende Funktionalitäten zur Verfügung:
@@ -1433,8 +1431,6 @@ BOOL ID des Objektes mit der Geometrie, die sich aus ObjId1 + ObjId2 ergibt.
 
 # interface OBJECTVIEWERLib::_DObjectViewer
 
-%title%
-
 #### remark
 
 Arbeitet mit der 3D-Engine zusammen.! Initialisierung des 3D-OCX: kernel = new G3DKernel.G3DKernel viewer = new OBJECTVIEWER.ObjectViewerCtrl.1(form) viewer.UseKernelObject(kernel)
@@ -2554,5 +2550,3 @@ Text 1
 ### Überschrift 2
 
 Text 2
-
-%sectiondef%

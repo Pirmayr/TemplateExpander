@@ -52,7 +52,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="all.xml" />
     <Content Include="parameters.txt" />
     <Content Include="Templates\md.compounddef.txt" />
     <Content Include="Templates\md.doxygenindex.txt" />
