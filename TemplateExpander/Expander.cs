@@ -18,19 +18,9 @@ namespace TemplateExpander
     private const string ValueName = "#text";
     private const string VariableNameValue = DelimiterVariable + "value" + DelimiterVariable;
 
-    public static string Expansion(string templateSet, string templatesDirectory, XmlNode root, string parametersPath)
+    public static string Expansion(string format, string templatesDirectory, XmlNode root, string parametersPath)
     {
-      return CleanValue(Expansion(templateSet, root, ReadParameters(parametersPath), GetTemplates(templatesDirectory)), false);
-    }
-
-    private static Strings GetTemplates(string templatesDirectory)
-    {
-      var result = new Strings();
-      foreach (var currentPath in Directory.GetFiles(templatesDirectory, "*" + ExtensionTemplate))
-      {
-        result.Add(Path.GetFileNameWithoutExtension(currentPath), File.ReadAllText(currentPath));  
-      }
-      return result;
+      return CleanValue(Expansion(format, root, ReadParameters(parametersPath), ReadTemplates(templatesDirectory)), false);
     }
 
     private static bool Accept(XmlNode node, Parameters parameters)
@@ -62,13 +52,13 @@ namespace TemplateExpander
       expansions[key] += RemoveVariables(alias);
     }
 
-    private static void AddExpansions(string templateSet, IEnumerable nodes, bool isValueTemplate, Strings expansions, Parameters parameters, Strings templates)
+    private static void AddExpansions(string format, IEnumerable nodes, bool isValueTemplate, Strings expansions, Parameters parameters, Strings templates)
     {
       if (nodes != null)
       {
         foreach (XmlNode currentChild in nodes)
         {
-          AddExpansion(expansions, isValueTemplate ? VariableNameValue : DelimiterVariable + currentChild.LocalName + DelimiterVariable, Expansion(templateSet, currentChild, parameters, templates), parameters);
+          AddExpansion(expansions, isValueTemplate ? VariableNameValue : DelimiterVariable + currentChild.LocalName + DelimiterVariable, Expansion(format, currentChild, parameters, templates), parameters);
         }
       }
     }
@@ -83,23 +73,28 @@ namespace TemplateExpander
       return result;
     }
 
-    private static string Expansion(string templateSet, XmlNode node, Parameters parameters, Strings templates)
+    private static string Expansion(string format, XmlNode node, Parameters parameters, Strings templates)
     {
       string name = node.LocalName;
       if (name != ValueName)
       {
         if (Accept(node, parameters))
         {
-          string template = GetTemplate(templateSet, name, templates);
+          string template = GetTemplate(format, name, templates);
           bool isValueTemplate = template.Contains(VariableNameValue);
           Strings expansions = new Strings {{VariableNameValue, ""}};
-          AddExpansions(templateSet, node.ChildNodes, isValueTemplate, expansions, parameters, templates);
-          AddExpansions(templateSet, node.Attributes, false, expansions, parameters, templates);
+          AddExpansions(format, node.ChildNodes, isValueTemplate, expansions, parameters, templates);
+          AddExpansions(format, node.Attributes, false, expansions, parameters, templates);
           return expansions.Aggregate(template, (current, currentExpansion) => current.Replace(currentExpansion.Key, currentExpansion.Value));
         }
         return "";
       }
       return CleanValue(node.Value, true);
+    }
+
+    private static string GetTemplate(string templateSet, string tag, Strings templates)
+    {
+      return templates.TryGetValue(templateSet + "." + tag, out string result) ? result : VariableNameValue;
     }
 
     private static Parameters ReadParameters(string path)
@@ -127,6 +122,16 @@ namespace TemplateExpander
           }
           result[currentName][currentKey] += currentValue;
         }
+      }
+      return result;
+    }
+
+    private static Strings ReadTemplates(string templatesDirectory)
+    {
+      Strings result = new Strings();
+      foreach (string currentPath in Directory.GetFiles(templatesDirectory, "*" + ExtensionTemplate))
+      {
+        result.Add(Path.GetFileNameWithoutExtension(currentPath), File.ReadAllText(currentPath));
       }
       return result;
     }
@@ -163,11 +168,6 @@ namespace TemplateExpander
         }
         previousLength = currentLength;
       }
-    }
-
-    private static string GetTemplate(string templateSet, string tag, Strings templates)
-    {
-      return templates.TryGetValue(templateSet + "." + tag, out var result)? result : VariableNameValue;
     }
 
     private class Parameters : Dictionary<string, Strings>
