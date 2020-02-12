@@ -14,6 +14,7 @@ namespace TemplateExpander
     private const string ExtensionTemplate = ".txt";
     private const string NameAlias = "alias";
     private const string NameFilter = "filter";
+    private const string NameReplacement = "replacement";
     private const char SeparatorValues = '|';
     private const string ValueName = "#text";
     private const string VariableNameValue = DelimiterVariable + "value" + DelimiterVariable;
@@ -23,6 +24,10 @@ namespace TemplateExpander
       return CleanValue(Expansion(format, root, ReadParameters(parametersPath), ReadTemplates(templatesDirectory)), false);
     }
 
+    /// <summary>Checks, if the node is accepted for processing.</summary>
+    /// <param name="node">Node</param>
+    /// <param name="parameters">Parameters</param>
+    /// <returns>"true" if the node ist accepted; otherwise, false.</returns>
     private static bool Accept(XmlNode node, Parameters parameters)
     {
       foreach (string currentFilterValue in parameters.Get(NameFilter, node.LocalName, DefaultFilter).Split(SeparatorValues))
@@ -37,19 +42,23 @@ namespace TemplateExpander
 
     private static void AddExpansion(Dictionary<string, string> expansions, string key, string value, Parameters parameters)
     {
-      string alias = value;
+      string actualValue = value;
+      foreach (KeyValuePair<string, string> currentReplacement in parameters.Get(NameReplacement))
+      {
+        actualValue = actualValue.Replace(currentReplacement.Key, currentReplacement.Value);
+      }
       foreach (KeyValuePair<string, string> currentAlias in parameters.Get(NameAlias))
       {
         if (currentAlias.Key == value)
         {
-          alias = currentAlias.Value;
+          actualValue = currentAlias.Value;
         }
       }
       if (!expansions.ContainsKey(key))
       {
         expansions.Add(key, "");
       }
-      expansions[key] += RemoveVariables(alias);
+      expansions[key] += RemoveVariables(actualValue);
     }
 
     private static void AddExpansions(string format, IEnumerable nodes, bool isValueTemplate, Strings expansions, Parameters parameters, Strings templates)

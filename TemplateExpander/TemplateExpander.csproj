@@ -48,8 +48,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="all.md" />
     <None Include="App.config" />
+    <None Include="manual.md" />
+    <None Include="md\documentation.md" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="parameters.txt" />
@@ -65,5 +66,15 @@
     <Content Include="Templates\md.simplesect.txt" />
     <Content Include="Templates\md.title.txt" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>pushd $(ProjectDir)
+doxygen\doxygen doxygen\Doxyfile
+popd</PreBuildEvent>
+  </PropertyGroup>
 </Project>

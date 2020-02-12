@@ -1,6 +1,5 @@
 alias;return;Rückgabewert
 alias;KernelLib::IG3DKernel;3DEngine
 alias;md_C:_Entwicklung_branches_B5010_P4_Source_chiemsee_Components_ObjectViewer_UserDocumentation;3D-OCX
-filter;compounddef;self::*[@id='interface_kernel_lib_1_1_i_g3_d_kernel']
-filter;compounddef;self::*[@id="interface_o_b_j_e_c_t_v_i_e_w_e_r_lib_1_1___d_object_viewer"]
-filter;compounddef;self::*[@id="md__c_1__entwicklung_branches__b5010__p4__source_chiemsee__components__object_viewer__user_documentation"]
+alias;remark;Anmerkungen
+replacement;::;`::`
