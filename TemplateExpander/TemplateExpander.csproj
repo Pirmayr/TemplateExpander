@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="doxygen\Doxyfile" />
     <None Include="manual.md" />
     <None Include="md\Developer.md" />
     <None Include="md\User.md" />
