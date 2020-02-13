@@ -50,21 +50,25 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="manual.md" />
-    <None Include="md\documentation.md" />
+    <None Include="md\Developer.md" />
+    <None Include="md\User.md" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="parameters.txt" />
+    <Content Include="Developer.txt" />
     <Content Include="Templates\md.compounddef.txt" />
     <Content Include="Templates\md.doxygenindex.txt" />
+    <Content Include="Templates\md.emphasis.txt" />
     <Content Include="Templates\md.heading.txt" />
     <Content Include="Templates\md.itemizedlist.txt" />
     <Content Include="Templates\md.listitem.txt" />
     <Content Include="Templates\md.memberdef.txt" />
     <Content Include="Templates\md.parameteritem.txt" />
     <Content Include="Templates\md.parameterlist.txt" />
+    <Content Include="Templates\md.ref.txt" />
     <Content Include="Templates\md.sectiondef.txt" />
     <Content Include="Templates\md.simplesect.txt" />
     <Content Include="Templates\md.title.txt" />
+    <Content Include="User.txt" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

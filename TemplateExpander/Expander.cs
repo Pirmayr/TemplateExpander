@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Xml;
 
 namespace TemplateExpander
@@ -24,6 +25,17 @@ namespace TemplateExpander
       return CleanValue(Expansion(format, root, ReadParameters(parametersPath), ReadTemplates(templatesDirectory)), false);
     }
 
+    /// <summary>Replaces word in text.</summary>
+    /// <param name="text">Text</param>
+    /// <param name="word">Word</param>
+    /// <param name="replacement">Replacement</param>
+    /// <param name="options">Options</param>
+    /// <returns>String with word replaced.</returns>
+    public static string ReplaceWord(this string text, string word, string replacement, RegexOptions options = RegexOptions.None)
+    {
+      return Regex.Replace(text, $@"\b{word}\b", replacement, options);
+    }
+
     /// <summary>Checks, if the node is accepted for processing.</summary>
     /// <param name="node">Node</param>
     /// <param name="parameters">Parameters</param>
@@ -40,25 +52,12 @@ namespace TemplateExpander
       return false;
     }
 
-    private static void AddExpansion(Dictionary<string, string> expansions, string key, string value, Parameters parameters)
+    private static void AddExpansion(Strings expansions, string key, string value, Parameters parameters)
     {
-      string actualValue = value;
-      foreach (KeyValuePair<string, string> currentReplacement in parameters.Get(NameReplacement))
-      {
-        actualValue = actualValue.Replace(currentReplacement.Key, currentReplacement.Value);
-      }
-      foreach (KeyValuePair<string, string> currentAlias in parameters.Get(NameAlias))
-      {
-        if (currentAlias.Key == value)
-        {
-          actualValue = currentAlias.Value;
-        }
-      }
-      if (!expansions.ContainsKey(key))
-      {
-        expansions.Add(key, "");
-      }
-      expansions[key] += RemoveVariables(actualValue);
+      string actualValue = value; 
+      actualValue = parameters.Get(NameReplacement).Aggregate(actualValue, (current, currentReplacement) => ReplaceWord(current, currentReplacement.Key, currentReplacement.Value));
+      actualValue = parameters.Get(NameAlias).Aggregate(actualValue, (current, currentAlias) => currentAlias.Key == value ? currentAlias.Value : current);
+      expansions.Append(key, RemoveVariables(actualValue));
     }
 
     private static void AddExpansions(string format, IEnumerable nodes, bool isValueTemplate, Strings expansions, Parameters parameters, Strings templates)
@@ -201,6 +200,14 @@ namespace TemplateExpander
 
     private class Strings : Dictionary<string, string>
     {
+      public void Append(string key, string value)
+      {
+        if (!ContainsKey(key))
+        {
+          Add(key, "");
+        }
+        this[key] += value;
+      }
     }
   }
 }

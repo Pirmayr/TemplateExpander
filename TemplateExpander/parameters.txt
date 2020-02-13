@@ -1,5 +1,0 @@
-alias;return;Rückgabewert
-alias;KernelLib::IG3DKernel;3DEngine
-alias;md_C:_Entwicklung_branches_B5010_P4_Source_chiemsee_Components_ObjectViewer_UserDocumentation;3D-OCX
-alias;remark;Anmerkungen
-replacement;::;`::`

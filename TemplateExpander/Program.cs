@@ -1,4 +1,6 @@
-﻿using System.IO;
+﻿using System.Diagnostics;
+using System.IO;
+using System.Threading;
 using System.Xml;
 
 namespace TemplateExpander
@@ -35,17 +37,30 @@ namespace TemplateExpander
 
     private static void Main(string[] arguments)
     {
+      Process process = new Process
+      {
+        StartInfo = new ProcessStartInfo
+        {
+          FileName = @"C:\usr\Prg\TemplateExpander\TemplateExpander\doxygen\doxygen.exe",
+          Arguments = @"C:\usr\Prg\TemplateExpander\TemplateExpander\doxygen\Doxyfile",
+          UseShellExecute =  false
+        }
+      };
+      process.Start();
+      process.WaitForExit();
       string templateSet = arguments[0];
       string templatesDirectory = arguments[1];
       string xmlPath = arguments[2];
-      string outputPath = arguments[3];
+      string outputDirectory = arguments[3];
       string parametersPath = arguments[4];
-      string outputDirectory = Path.GetDirectoryName(outputPath);
-      if (outputDirectory != null)
+
+      foreach (var currentParametersPath in parametersPath.Split(';'))
       {
-        Directory.CreateDirectory(outputDirectory);
+        var outputPath = outputDirectory + Path.GetFileNameWithoutExtension(currentParametersPath) + "." + templateSet;
+
+        File.WriteAllText(outputPath, Expander.Expansion(templateSet, templatesDirectory, ReadXml(xmlPath), currentParametersPath));
       }
-      File.WriteAllText(outputPath, Expander.Expansion(templateSet, templatesDirectory, ReadXml(xmlPath), parametersPath));
+
     }
 
     private static XmlDocument ReadXml(string xmlPath)
