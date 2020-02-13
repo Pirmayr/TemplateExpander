@@ -2,30 +2,22 @@
 
 ## Documentation<br>
 
-Name
-
-Übersicht
-
-Beschreibung
-
-Version
-
 # Documentation
 
 ## TemplateExpander
 
-## Name
+### Name
 
  **TemplateExpander** 
 
-## Übersicht
+### Übersicht
 
  **TemplateExpander** _output-format_ _templates-directory_ _xml-path_ _output-path_ _parameters-path_ 
 
-## Beschreibung
+### Beschreibung
 
  **TemplateExpander** liest eine XML-Datei und transformiert sie anhand der angegebenen Schablonen.
 
-## Version
+### Version
 
-4
+6

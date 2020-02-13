@@ -1,75 +1,72 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
-using System.Threading;
 using System.Xml;
 
 namespace TemplateExpander
 {
-  internal static class Program
-  {
-    private static void AddDoxygenCompounds(string xmlPath, XmlDocument root)
+    internal static class Program
     {
-      XmlNodeList selectedNodes = root.SelectNodes("/doxygenindex/compound");
-      if (selectedNodes != null)
-      {
-        foreach (XmlNode currentNode in selectedNodes)
+        private static void AddDoxygenCompounds(string xmlPath, XmlDocument root)
         {
-          XmlAttribute currentRefId = currentNode.Attributes?["refid"];
-          if (currentRefId != null)
-          {
-            string currentPath = Path.GetDirectoryName(xmlPath) + "/" + currentRefId.Value + ".xml";
-            if (File.Exists(currentPath))
+            var selectedNodes = root.SelectNodes("/doxygenindex/compound");
+            if (selectedNodes != null)
             {
-              XmlDocument currentRoot = new XmlDocument();
-              currentRoot.LoadXml(File.ReadAllText(currentPath));
-              if (currentRoot.DocumentElement != null)
-              {
-                foreach (XmlNode node in currentRoot.DocumentElement.ChildNodes)
+                foreach (XmlNode currentNode in selectedNodes)
                 {
-                  root.DocumentElement?.AppendChild(root.ImportNode(node, true));
+                    var currentRefId = currentNode.Attributes?["refid"];
+                    if (currentRefId != null)
+                    {
+                        var currentPath = Path.GetDirectoryName(xmlPath) + "/" + currentRefId.Value + ".xml";
+                        if (File.Exists(currentPath))
+                        {
+                            var currentRoot = new XmlDocument();
+                            currentRoot.LoadXml(File.ReadAllText(currentPath));
+                            if (currentRoot.DocumentElement != null)
+                            {
+                                foreach (XmlNode node in currentRoot.DocumentElement.ChildNodes)
+                                {
+                                    root.DocumentElement?.AppendChild(root.ImportNode(node, true));
+                                }
+                            }
+                        }
+                    }
                 }
-              }
             }
-          }
         }
-      }
-    }
 
-    private static void Main(string[] arguments)
-    {
-      Process process = new Process
-      {
-        StartInfo = new ProcessStartInfo
+        private static void Main(string[] arguments)
         {
-          FileName = @"C:\usr\Prg\TemplateExpander\TemplateExpander\doxygen\doxygen.exe",
-          Arguments = @"C:\usr\Prg\TemplateExpander\TemplateExpander\doxygen\Doxyfile",
-          UseShellExecute =  false
+            try
+            {
+                var templateSet = arguments[0];
+                var templatesDirectory = arguments[1];
+                var xmlPath = arguments[2];
+                var outputDirectory = arguments[3];
+                var parametersPath = arguments[4];
+                var commandPath = arguments[5];
+                var commandArguments = arguments[6];
+                Process.Start(commandPath, commandArguments)?.WaitForExit();
+                foreach (var currentParametersPath in parametersPath.Split(';'))
+                {
+                    var outputPath = outputDirectory + Path.GetFileNameWithoutExtension(currentParametersPath) + "." + templateSet;
+                    File.WriteAllText(outputPath, Expander.Expansion(templateSet, templatesDirectory, ReadXml(xmlPath), currentParametersPath));
+                }
+                Environment.Exit(0);
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception.Message);
+                Environment.Exit(1);
+            }
         }
-      };
-      process.Start();
-      process.WaitForExit();
-      string templateSet = arguments[0];
-      string templatesDirectory = arguments[1];
-      string xmlPath = arguments[2];
-      string outputDirectory = arguments[3];
-      string parametersPath = arguments[4];
 
-      foreach (var currentParametersPath in parametersPath.Split(';'))
-      {
-        var outputPath = outputDirectory + Path.GetFileNameWithoutExtension(currentParametersPath) + "." + templateSet;
-
-        File.WriteAllText(outputPath, Expander.Expansion(templateSet, templatesDirectory, ReadXml(xmlPath), currentParametersPath));
-      }
-      Environment.Exit(0);
+        private static XmlDocument ReadXml(string xmlPath)
+        {
+            var root = new XmlDocument();
+            root.LoadXml(File.ReadAllText(xmlPath));
+            AddDoxygenCompounds(xmlPath, root);
+            return root;
+        }
     }
-
-    private static XmlDocument ReadXml(string xmlPath)
-    {
-      XmlDocument root = new XmlDocument();
-      root.LoadXml(File.ReadAllText(xmlPath));
-      AddDoxygenCompounds(xmlPath, root);
-      return root;
-    }
-  }
 }

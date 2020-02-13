@@ -14,4 +14,4 @@ TemplateExpander liest eine XML-Datei und transformiert sie anhand der angegeben
 
 ## Version
 
-4
+6
