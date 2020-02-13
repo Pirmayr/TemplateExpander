@@ -1,35 +1,21 @@
 # Inhalt
 
 ## Klasse TemplateExpander::Expander<br>
-
 ### Öffentliche statische Methoden<br>
 <a href="#FunktionstringExpansion">Funktion string Expansion</a><br>
-
 <a href="#FunktionstringReplaceWord">Funktion string ReplaceWord</a><br>
-
 ### Private statische Methoden<br>
 <a href="#FunktionboolAccept">Funktion bool Accept</a><br>
-
 <a href="#FunktionvoidAddExpansion">Funktion void AddExpansion</a><br>
-
 <a href="#FunktionvoidAddExpansions">Funktion void AddExpansions</a><br>
-
 <a href="#FunktionstringCleanValue">Funktion string CleanValue</a><br>
-
 <a href="#FunktionstringExpansion">Funktion string Expansion</a><br>
-
 <a href="#FunktionHashSet< string >GetFormats">Funktion HashSet< string > GetFormats</a><br>
-
 <a href="#FunktionstringGetTemplate">Funktion string GetTemplate</a><br>
-
 <a href="#FunktionHashSet< string >GetVariables">Funktion HashSet< string > GetVariables</a><br>
-
 <a href="#FunktionParametersReadParameters">Funktion Parameters ReadParameters</a><br>
-
 <a href="#FunktionStringsReadTemplates">Funktion Strings ReadTemplates</a><br>
-
 <a href="#FunktionstringRemoveVariables">Funktion string RemoveVariables</a><br>
-
 <a href="#FunktionstringReplaceExhaustive">Funktion string ReplaceExhaustive</a><br>
 
 # Klasse TemplateExpander::Expander

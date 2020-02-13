@@ -1,3 +1,2 @@
 ﻿## %kind% %compoundname%<br>
-%mdtoc:detaileddescription%
-%mdtoc:sectiondef%
+%mdtoc:detaileddescription%%mdtoc:sectiondef%

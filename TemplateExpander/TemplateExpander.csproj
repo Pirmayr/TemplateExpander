@@ -71,7 +71,8 @@
     <Content Include="Templates\md.title.txt" />
     <Content Include="Templates\mdtoc.compounddef.txt" />
     <Content Include="Templates\mdtoc.detaileddescription.txt" />
-    <Content Include="Templates\mdtoc.sect1.txt" />
+    <Content Include="Templates\mdtoc.heading.txt" />
+    <Content Include="Templates\mdtoc.para.txt" />
     <Content Include="Templates\mdtoc.memberdef.txt" />
     <Content Include="Templates\mdtoc.sectiondef.txt" />
     <Content Include="User.txt" />
