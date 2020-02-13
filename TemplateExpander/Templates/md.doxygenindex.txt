@@ -1,3 +1,7 @@
 ﻿
 
-%compounddef%	(1)
+# Inhalt
+
+%mdtoc:compounddef%
+
+%compounddef%

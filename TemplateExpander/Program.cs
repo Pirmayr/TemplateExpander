@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
 using System.IO;
 using System.Threading;
 using System.Xml;
@@ -60,7 +61,7 @@ namespace TemplateExpander
 
         File.WriteAllText(outputPath, Expander.Expansion(templateSet, templatesDirectory, ReadXml(xmlPath), currentParametersPath));
       }
-
+      Environment.Exit(0);
     }
 
     private static XmlDocument ReadXml(string xmlPath)

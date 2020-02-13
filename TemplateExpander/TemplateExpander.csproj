@@ -68,6 +68,11 @@
     <Content Include="Templates\md.sectiondef.txt" />
     <Content Include="Templates\md.simplesect.txt" />
     <Content Include="Templates\md.title.txt" />
+    <Content Include="Templates\mdtoc.compounddef.txt" />
+    <Content Include="Templates\mdtoc.detaileddescription.txt" />
+    <Content Include="Templates\mdtoc.sect1.txt" />
+    <Content Include="Templates\mdtoc.memberdef.txt" />
+    <Content Include="Templates\mdtoc.sectiondef.txt" />
     <Content Include="User.txt" />
   </ItemGroup>
   <ItemGroup />

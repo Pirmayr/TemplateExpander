@@ -7,7 +7,9 @@ alias;page;
 alias;parameters;Parameter
 alias;private-attrib;Private Konstanten
 alias;public-static-func;Öffentliche statische Methoden
+alias;private-static-func;Private statische Methoden
 alias;remark;Anmerkungen
 alias;return;Rückgabewert
 filter;compounddef;self::*[@id="class_template_expander_1_1_expander"]
 filter;sectiondef;self::*[@kind="public-static-func"]
+filter;sectiondef;self::*[@kind="private-static-func"]

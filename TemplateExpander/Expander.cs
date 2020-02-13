@@ -16,6 +16,7 @@ namespace TemplateExpander
     private const string NameAlias = "alias";
     private const string NameFilter = "filter";
     private const string NameReplacement = "replacement";
+    private const char SeparatorFormat = ':';
     private const char SeparatorValues = '|';
     private const string ValueName = "#text";
     private const string VariableNameValue = DelimiterVariable + "value" + DelimiterVariable;
@@ -54,19 +55,19 @@ namespace TemplateExpander
 
     private static void AddExpansion(Strings expansions, string key, string value, Parameters parameters)
     {
-      string actualValue = value; 
+      string actualValue = value;
       actualValue = parameters.Get(NameReplacement).Aggregate(actualValue, (current, currentReplacement) => ReplaceWord(current, currentReplacement.Key, currentReplacement.Value));
       actualValue = parameters.Get(NameAlias).Aggregate(actualValue, (current, currentAlias) => currentAlias.Key == value ? currentAlias.Value : current);
       expansions.Append(key, RemoveVariables(actualValue));
     }
 
-    private static void AddExpansions(string format, IEnumerable nodes, bool isValueTemplate, Strings expansions, Parameters parameters, Strings templates)
+    private static void AddExpansions(string format, IEnumerable nodes, bool isValueTemplate, bool prefixVariable, Strings expansions, Parameters parameters, Strings templates)
     {
       if (nodes != null)
       {
         foreach (XmlNode currentChild in nodes)
         {
-          AddExpansion(expansions, isValueTemplate ? VariableNameValue : DelimiterVariable + currentChild.LocalName + DelimiterVariable, Expansion(format, currentChild, parameters, templates), parameters);
+          AddExpansion(expansions, isValueTemplate ? VariableNameValue : DelimiterVariable + (prefixVariable ? format + SeparatorFormat : "") + currentChild.LocalName + DelimiterVariable, Expansion(format, currentChild, parameters, templates), parameters);
         }
       }
     }
@@ -91,8 +92,13 @@ namespace TemplateExpander
           string template = GetTemplate(format, name, templates);
           bool isValueTemplate = template.Contains(VariableNameValue);
           Strings expansions = new Strings {{VariableNameValue, ""}};
-          AddExpansions(format, node.ChildNodes, isValueTemplate, expansions, parameters, templates);
-          AddExpansions(format, node.Attributes, false, expansions, parameters, templates);
+          AddExpansions(format, node.ChildNodes, isValueTemplate, false, expansions, parameters, templates);
+          AddExpansions(format, node.Attributes, false, false, expansions, parameters, templates);
+          foreach (string currentFormat in GetFormats(GetVariables(template)))
+          {
+            AddExpansions(currentFormat, node.ChildNodes, isValueTemplate, true, expansions, parameters, templates);
+            AddExpansions(currentFormat, node.Attributes, false, true, expansions, parameters, templates);
+          }
           return expansions.Aggregate(template, (current, currentExpansion) => current.Replace(currentExpansion.Key, currentExpansion.Value));
         }
         return "";
@@ -100,9 +106,47 @@ namespace TemplateExpander
       return CleanValue(node.Value, true);
     }
 
+    private static HashSet<string> GetFormats(HashSet<string> variables)
+    {
+      HashSet<string> result = new HashSet<string>();
+      foreach (string currentVariable in variables)
+      {
+        string[] currentItems = currentVariable.Split(SeparatorFormat);
+        if (currentItems.Length == 2)
+        {
+          result.Add(currentItems[0]);
+        }
+      }
+      return result;
+    }
+
     private static string GetTemplate(string templateSet, string tag, Strings templates)
     {
       return templates.TryGetValue(templateSet + "." + tag, out string result) ? result : VariableNameValue;
+    }
+
+    private static HashSet<string> GetVariables(string text)
+    {
+      HashSet<string> result = new HashSet<string>();
+      bool inVariable = false;
+      string currentVariable = "";
+      foreach (char currentCharacter in text)
+      {
+        if (currentCharacter.ToString() == DelimiterVariable)
+        {
+          if (inVariable)
+          {
+            result.Add(currentVariable);
+            currentVariable = "";
+          }
+          inVariable = !inVariable;
+        }
+        else if (inVariable)
+        {
+          currentVariable += currentCharacter;
+        }
+      }
+      return result;
     }
 
     private static Parameters ReadParameters(string path)
@@ -139,7 +183,7 @@ namespace TemplateExpander
       Strings result = new Strings();
       foreach (string currentPath in Directory.GetFiles(templatesDirectory, "*" + ExtensionTemplate))
       {
-        result.Add(Path.GetFileNameWithoutExtension(currentPath), File.ReadAllText(currentPath));
+        result.Add(Path.GetFileNameWithoutExtension(currentPath), File.ReadAllText(currentPath).Replace("\r", ""));
       }
       return result;
     }

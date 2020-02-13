@@ -1,5 +1,6 @@
 ﻿
 
+<a id="%kind%%type%%name%"></a>
 ### %kind% %type% %name%
 
 %briefdescription%
