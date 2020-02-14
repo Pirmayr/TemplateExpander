@@ -72,6 +72,10 @@ namespace TemplateExpander
             }
         }
 
+        /// <summary>Cleans string.</summary>
+        /// <param name="Value">String to be cleaned.</param>
+        /// <param name="removeCarriageReturn">Should carriage-returns be removed by replacing them with blanks?</param>
+        /// <returns>Cleaned string.</returns>
         private static string CleanValue(string value, bool removeCarriageReturn)
         {
             var result = value;

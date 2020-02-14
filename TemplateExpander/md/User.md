@@ -4,6 +4,7 @@
 Name<br>
 Übersicht<br>
 Beschreibung<br>
+Optionen<br>
 Version<br>
 
 # Documentation
@@ -16,11 +17,15 @@ Version<br>
 
 ### Übersicht
 
-**TemplateExpander** _output-format_ _templates-directory_ _xml-path_ _output-path_ _parameters-path_ 
+**TemplateExpander** format templates-directory xml-path output-path parameters-path
 
 ### Beschreibung
 
 **TemplateExpander** liest eine XML-Datei und transformiert sie anhand der angegebenen Schablonen.
+
+### Optionen
+
+* format: Gibt an, welcher Schablonensatz verwendet werden soll. Erster Teil des Schablonennamens. Beispiel: "md.para.txt" (Das Format ist hier "md").
 
 ### Version
 

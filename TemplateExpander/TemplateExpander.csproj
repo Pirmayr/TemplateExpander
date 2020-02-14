@@ -56,6 +56,35 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Developer.txt" />
+    <Content Include="Templates\latex.compounddef.txt" />
+    <Content Include="Templates\latex.doxygenindex.txt" />
+    <Content Include="Templates\latex.emphasis.txt" />
+    <Content Include="Templates\latex.heading.txt" />
+    <Content Include="Templates\latex.itemizedlist.txt" />
+    <Content Include="Templates\latex.listitem.txt" />
+    <Content Include="Templates\latex.memberdef.txt" />
+    <Content Include="Templates\latex.parameteritem.txt" />
+    <Content Include="Templates\latex.parameterlist.txt" />
+    <Content Include="Templates\latex.ref.txt" />
+    <Content Include="Templates\latex.sectiondef.txt" />
+    <Content Include="Templates\latex.simplesect.txt" />
+    <Content Include="Templates\latex.title.txt" />
+    <Content Include="Templates\latex_class.tpl" />
+    <Content Include="Templates\latex_compounds.tpl" />
+    <Content Include="Templates\latex_documentation.tpl" />
+    <Content Include="Templates\latex_function.tpl" />
+    <Content Include="Templates\latex_interface.tpl" />
+    <Content Include="Templates\latex_itemizedlist.tpl" />
+    <Content Include="Templates\latex_listitem.tpl" />
+    <Content Include="Templates\latex_members.tpl" />
+    <Content Include="Templates\latex_parameteritem.tpl" />
+    <Content Include="Templates\latex_parameterlist.tpl" />
+    <Content Include="Templates\latex_protected-func.tpl" />
+    <Content Include="Templates\latex_public-func.tpl" />
+    <Content Include="Templates\latex_replacements.txt" />
+    <Content Include="Templates\latex_sections.tpl" />
+    <Content Include="Templates\latex_simplesect.tpl" />
+    <Content Include="Templates\latex_verbatim.tpl" />
     <Content Include="Templates\md.compounddef.txt" />
     <Content Include="Templates\md.doxygenindex.txt" />
     <Content Include="Templates\md.emphasis.txt" />

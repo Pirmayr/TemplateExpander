@@ -70,6 +70,19 @@ Checks, if the node is accepted for processing.
 <a id="FunktionstringCleanValue"></a>
 ### Funktion string CleanValue
 
+Cleans string.
+
+#### Parameters
+
+| Typ | Beschreibung |
+| --- | --- |
+| Value | String to be cleaned. |
+| removeCarriageReturn | Should carriage-returns be removed by replacing them with blanks? |
+
+#### Rückgabewert
+
+Cleaned string.
+
 <a id="FunktionstringExpansion"></a>
 ### Funktion string Expansion
 
