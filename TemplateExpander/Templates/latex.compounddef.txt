@@ -1,6 +1,6 @@
 ﻿
 
-# %kind% %compoundname%
+\section{%kind% %compoundname%}
 
 %title%
 

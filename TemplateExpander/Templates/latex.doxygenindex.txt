@@ -1,7 +1,11 @@
 ﻿
 
-# Inhalt
-
-%mdtoc:compounddef%
-
+\documentclass{article}
+\usepackage{verbatim}
+\usepackage[utf8]{inputenc}
+\usepackage[german]{babel}
+\usepackage{parskip}
+\begin{document}
+\tableofcontents 
 %compounddef%
+\end{document}
