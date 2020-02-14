@@ -1,0 +1,95 @@
+\documentclass{article}
+\usepackage{verbatim}
+\usepackage[utf8]{inputenc}
+\usepackage[german]{babel}
+\usepackage{parskip}
+\begin{document}
+\tableofcontents 
+
+\section{Klasse TemplateExpander::Expander}
+
+\subsection{Öffentliche statische Methoden}
+
+\subsubsection{Funktion string Expansion}
+
+\subsubsection{Funktion string ReplaceWord}
+
+Replaces word in text.
+
+\subsubsection*{Parameter}
+\begin{tabular}{ |p{40mm}|p{75mm}| } 
+\hline
+text & Text \\
+\hline
+word & Word \\
+\hline
+replacement & Replacement \\
+\hline
+options & Options \\
+\hline
+
+\end{tabular}
+
+\paragraph{Rückgabewert}
+
+String with word replaced.
+
+\subsection{Private statische Methoden}
+
+\subsubsection{Funktion bool Accept}
+
+Checks, if the node is accepted for processing.
+
+\subsubsection*{Parameter}
+\begin{tabular}{ |p{40mm}|p{75mm}| } 
+\hline
+node & Node \\
+\hline
+Parameter & Parameters \\
+\hline
+
+\end{tabular}
+
+\paragraph{Rückgabewert}
+
+"true" if the node ist accepted; otherwise, false.
+
+\subsubsection{Funktion void AddExpansion}
+
+\subsubsection{Funktion void AddExpansions}
+
+\subsubsection{Funktion string CleanValue}
+
+Cleans string.
+
+\subsubsection*{Parameter}
+\begin{tabular}{ |p{40mm}|p{75mm}| } 
+\hline
+Value & String to be cleaned. \\
+\hline
+removeCarriageReturn & Should carriage-returns be removed by replacing them with blanks? \\
+\hline
+
+\end{tabular}
+
+\paragraph{Rückgabewert}
+
+Cleaned string.
+
+\subsubsection{Funktion string Expansion}
+
+\subsubsection{Funktion HashSet< string > GetFormats}
+
+\subsubsection{Funktion string GetTemplate}
+
+\subsubsection{Funktion HashSet< string > GetVariables}
+
+\subsubsection{Funktion Parameters ReadParameters}
+
+\subsubsection{Funktion Strings ReadTemplates}
+
+\subsubsection{Funktion string RemoveVariables}
+
+\subsubsection{Funktion string ReplaceExhaustive}
+
+\end{document}

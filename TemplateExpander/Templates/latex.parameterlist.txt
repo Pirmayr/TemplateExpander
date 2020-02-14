@@ -1,7 +1,7 @@
 
 
-#### Parameters
-
-| Typ | Beschreibung |
-| --- | --- |
+\subsubsection*{Parameter}
+\begin{tabular}{ |p{40mm}|p{75mm}| } 
+\hline
 %parameteritem%
+\end{tabular}

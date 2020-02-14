@@ -1,1 +1,2 @@
-| %parameternamelist% | %parameterdescription% |
+%parameternamelist% & %parameterdescription% \\
+\hline

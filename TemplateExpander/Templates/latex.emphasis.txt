@@ -1,1 +1,1 @@
-﻿ _%value%_ 
+﻿ {\em %value%} 

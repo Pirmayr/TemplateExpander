@@ -37,7 +37,7 @@ namespace TemplateExpander
 
         private static void Main(string[] arguments)
         {
-            try
+            // try
             {
                 var templateSet = arguments[0];
                 var templatesDirectory = arguments[1];
@@ -54,9 +54,9 @@ namespace TemplateExpander
                 }
                 Environment.Exit(0);
             }
-            catch (Exception exception)
+            // catch (Exception exception)
             {
-                Console.WriteLine(exception.Message);
+                // Console.WriteLine(exception.Message);
                 Environment.Exit(1);
             }
         }

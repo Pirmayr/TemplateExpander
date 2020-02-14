@@ -1,0 +1,36 @@
+\documentclass{article}
+\usepackage{verbatim}
+\usepackage[utf8]{inputenc}
+\usepackage[german]{babel}
+\usepackage{parskip}
+\begin{document}
+\tableofcontents 
+
+\section{Dokumentation TemplateExpander}
+
+\subsection{TemplateExpander}
+
+\subsection{Name}
+
+\textbf{TemplateExpander} 
+
+\subsection{Übersicht}
+
+\textbf{TemplateExpander} format templates-directory xml-path output-path parameters-path
+
+\subsection{Beschreibung}
+
+\textbf{TemplateExpander} liest eine XML-Datei und transformiert sie anhand der angegebenen Schablonen.
+
+\subsection{Optionen}
+
+\begin{itemize}
+\item format: Gibt an, welcher Schablonensatz verwendet werden soll. Erster Teil des Schablonennamens. Beispiel: "md.para.txt" (Das Format ist hier "md").
+
+\end{itemize}
+
+\subsection{Version}
+
+6
+
+\end{document}

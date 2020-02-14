@@ -1,0 +1,3 @@
+% Begin public-func ...
+%public-func%
+% End public-func.
