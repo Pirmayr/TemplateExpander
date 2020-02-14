@@ -46,12 +46,15 @@ namespace TemplateExpander
                 var parametersPath = arguments[4];
                 var commandPath = arguments[5];
                 var commandArguments = arguments[6];
+                var postCommandPath = arguments[7];
+                var postCommandArguments = arguments[8];
                 Process.Start(commandPath, commandArguments)?.WaitForExit();
                 foreach (var currentParametersPath in parametersPath.Split(';'))
                 {
                     var outputPath = outputDirectory + Path.GetFileNameWithoutExtension(currentParametersPath) + "." + templateSet;
                     File.WriteAllText(outputPath, Expander.Expansion(templateSet, templatesDirectory, ReadXml(xmlPath), currentParametersPath));
                 }
+                Process.Start(postCommandPath, postCommandArguments)?.WaitForExit();
                 Environment.Exit(0);
             }
             // catch (Exception exception)
