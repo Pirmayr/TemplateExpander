@@ -4,7 +4,6 @@ alias;function;Funktion
 alias;md_manual;Documentation
 alias;namespace;Namensraum
 alias;page;
-alias;parameters;Parameter
 alias;private-attrib;Private Konstanten
 alias;public-static-func;Öffentliche statische Methoden
 alias;private-static-func;Private statische Methoden

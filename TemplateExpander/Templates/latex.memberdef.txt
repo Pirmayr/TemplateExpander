@@ -1,6 +1,8 @@
 ﻿
 
-\subsubsection{%kind% %type% %name%}
+\subsubsection{%kind% %name%}
+
+\begin{verbatim}%type% %name%%argsstring%\end{verbatim}
 
 %briefdescription%
 

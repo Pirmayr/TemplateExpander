@@ -44,8 +44,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Expander.cs" />
+    <Compile Include="Parameters.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Strings.cs" />
+    <Compile Include="StringsStack.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -71,22 +74,6 @@
     <Content Include="Templates\latex.sectiondef.txt" />
     <Content Include="Templates\latex.simplesect.txt" />
     <Content Include="Templates\latex.title.txt" />
-    <Content Include="Templates\latex_class.tpl" />
-    <Content Include="Templates\latex_compounds.tpl" />
-    <Content Include="Templates\latex_documentation.tpl" />
-    <Content Include="Templates\latex_function.tpl" />
-    <Content Include="Templates\latex_interface.tpl" />
-    <Content Include="Templates\latex_itemizedlist.tpl" />
-    <Content Include="Templates\latex_listitem.tpl" />
-    <Content Include="Templates\latex_members.tpl" />
-    <Content Include="Templates\latex_parameteritem.tpl" />
-    <Content Include="Templates\latex_parameterlist.tpl" />
-    <Content Include="Templates\latex_protected-func.tpl" />
-    <Content Include="Templates\latex_public-func.tpl" />
-    <Content Include="Templates\latex_replacements.txt" />
-    <Content Include="Templates\latex_sections.tpl" />
-    <Content Include="Templates\latex_simplesect.tpl" />
-    <Content Include="Templates\latex_verbatim.tpl" />
     <Content Include="Templates\md.compounddef.txt" />
     <Content Include="Templates\md.doxygenindex.txt" />
     <Content Include="Templates\md.emphasis.txt" />
@@ -108,7 +95,6 @@
     <Content Include="Templates\mdtoc.sectiondef.txt" />
     <Content Include="User.txt" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>

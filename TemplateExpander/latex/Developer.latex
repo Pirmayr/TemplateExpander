@@ -2,6 +2,7 @@
 \usepackage{verbatim}
 \usepackage[utf8]{inputenc}
 \usepackage[german]{babel}
+\usepackage[margin=2cm,nohead]{geometry}
 \usepackage{parskip}
 \begin{document}
 \tableofcontents 
@@ -10,9 +11,95 @@
 
 \subsection{Öffentliche statische Methoden}
 
-\subsubsection{Funktion string Expansion}
+\subsubsection{Funktion Expansion}
 
-\subsubsection{Funktion string ReplaceWord}
+\begin{verbatim}string Expansion(string format, string templatesDirectory, XmlNode root, string parametersPath)\end{verbatim}
+
+\subsection{Private statische Methoden}
+
+\subsubsection{Funktion Accept}
+
+\begin{verbatim}bool Accept(XmlNode node, Parameters parameters)\end{verbatim}
+
+Checks, if the node is accepted for processing.
+
+\subsubsection*{Parameter}
+\begin{tabular}{ |p{40mm}|p{75mm}| } 
+\hline
+node & Node \\
+\hline
+parameters & Parameters \\
+\hline
+
+\end{tabular}
+
+\subsubsection*{Rückgabewert}
+
+true if the node ist accepted; otherwise, false.
+
+\subsubsection{Funktion AddExpansion}
+
+\begin{verbatim}void AddExpansion(Strings expansions, string key, string value, Parameters parameters)\end{verbatim}
+
+\subsubsection{Funktion AddExpansions}
+
+\begin{verbatim}void AddExpansions(string format, IEnumerable nodes, bool isValueTemplate, bool prefixVariable, Strings expansions, Parameters parameters, Strings templates, StringsStack stringsStack)\end{verbatim}
+
+\subsubsection{Funktion CleanValue}
+
+\begin{verbatim}string CleanValue(string value, bool removeCarriageReturn)\end{verbatim}
+
+Cleans string.
+
+\subsubsection*{Parameter}
+\begin{tabular}{ |p{40mm}|p{75mm}| } 
+\hline
+value & String to be cleaned. \\
+\hline
+removeCarriageReturn & Should carriage-returns be removed by replacing them with blanks? \\
+\hline
+
+\end{tabular}
+
+\subsubsection*{Rückgabewert}
+
+Cleaned string.
+
+\subsubsection{Funktion Expansion}
+
+\begin{verbatim}string Expansion(string format, XmlNode node, Parameters parameters, Strings templates, StringsStack expansionsStack)\end{verbatim}
+
+\subsubsection{Funktion GetFormats}
+
+\begin{verbatim}HashSet< string > GetFormats(HashSet< string > variables)\end{verbatim}
+
+\subsubsection{Funktion GetTemplate}
+
+\begin{verbatim}string GetTemplate(string templateSet, string tag, Strings templates)\end{verbatim}
+
+\subsubsection{Funktion GetVariables}
+
+\begin{verbatim}HashSet< string > GetVariables(string text)\end{verbatim}
+
+\subsubsection{Funktion ReadParameters}
+
+\begin{verbatim}Parameters ReadParameters(string path)\end{verbatim}
+
+\subsubsection{Funktion ReadTemplates}
+
+\begin{verbatim}Strings ReadTemplates(string templatesDirectory)\end{verbatim}
+
+\subsubsection{Funktion RemoveVariables}
+
+\begin{verbatim}string RemoveVariables(string text)\end{verbatim}
+
+\subsubsection{Funktion ReplaceExhaustive}
+
+\begin{verbatim}string ReplaceExhaustive(string value, string searchString, string replacement)\end{verbatim}
+
+\subsubsection{Funktion ReplaceWord}
+
+\begin{verbatim}string ReplaceWord(this string text, string word, string replacement, RegexOptions options=RegexOptions.None)\end{verbatim}
 
 Replaces word in text.
 
@@ -30,66 +117,8 @@ options & Options \\
 
 \end{tabular}
 
-\paragraph{Rückgabewert}
+\subsubsection*{Rückgabewert}
 
 String with word replaced.
-
-\subsection{Private statische Methoden}
-
-\subsubsection{Funktion bool Accept}
-
-Checks, if the node is accepted for processing.
-
-\subsubsection*{Parameter}
-\begin{tabular}{ |p{40mm}|p{75mm}| } 
-\hline
-node & Node \\
-\hline
-Parameter & Parameters \\
-\hline
-
-\end{tabular}
-
-\paragraph{Rückgabewert}
-
-"true" if the node ist accepted; otherwise, false.
-
-\subsubsection{Funktion void AddExpansion}
-
-\subsubsection{Funktion void AddExpansions}
-
-\subsubsection{Funktion string CleanValue}
-
-Cleans string.
-
-\subsubsection*{Parameter}
-\begin{tabular}{ |p{40mm}|p{75mm}| } 
-\hline
-Value & String to be cleaned. \\
-\hline
-removeCarriageReturn & Should carriage-returns be removed by replacing them with blanks? \\
-\hline
-
-\end{tabular}
-
-\paragraph{Rückgabewert}
-
-Cleaned string.
-
-\subsubsection{Funktion string Expansion}
-
-\subsubsection{Funktion HashSet< string > GetFormats}
-
-\subsubsection{Funktion string GetTemplate}
-
-\subsubsection{Funktion HashSet< string > GetVariables}
-
-\subsubsection{Funktion Parameters ReadParameters}
-
-\subsubsection{Funktion Strings ReadTemplates}
-
-\subsubsection{Funktion string RemoveVariables}
-
-\subsubsection{Funktion string ReplaceExhaustive}
 
 \end{document}

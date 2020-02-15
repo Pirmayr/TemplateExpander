@@ -10,26 +10,26 @@
 
 \subsection{TemplateExpander}
 
-\subsection{Name}
+\subsubsection{Name}
 
 \textbf{TemplateExpander} 
 
-\subsection{Übersicht}
+\subsubsection{Übersicht}
 
 \textbf{TemplateExpander} format templates-directory xml-path output-path parameters-path
 
-\subsection{Beschreibung}
+\subsubsection{Beschreibung}
 
 \textbf{TemplateExpander} liest eine XML-Datei und transformiert sie anhand der angegebenen Schablonen.
 
-\subsection{Optionen}
+\subsubsection{Optionen}
 
 \begin{itemize}
 \item format: Gibt an, welcher Schablonensatz verwendet werden soll. Erster Teil des Schablonennamens. Beispiel: "md.para.txt" (Das Format ist hier "md").
 
 \end{itemize}
 
-\subsection{Version}
+\subsubsection{Version}
 
 6
 

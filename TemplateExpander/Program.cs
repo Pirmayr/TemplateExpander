@@ -37,29 +37,27 @@ namespace TemplateExpander
 
         private static void Main(string[] arguments)
         {
-            // try
+            try
             {
-                var templateSet = arguments[0];
-                var templatesDirectory = arguments[1];
-                var xmlPath = arguments[2];
-                var outputDirectory = arguments[3];
-                var parametersPath = arguments[4];
-                var commandPath = arguments[5];
-                var commandArguments = arguments[6];
-                var postCommandPath = arguments[7];
-                var postCommandArguments = arguments[8];
-                Process.Start(commandPath, commandArguments)?.WaitForExit();
-                foreach (var currentParametersPath in parametersPath.Split(';'))
-                {
-                    var outputPath = outputDirectory + Path.GetFileNameWithoutExtension(currentParametersPath) + "." + templateSet;
-                    File.WriteAllText(outputPath, Expander.Expansion(templateSet, templatesDirectory, ReadXml(xmlPath), currentParametersPath));
-                }
+                var parametersPath = arguments[0];
+                var parameters = Parameters.ReadParameters(parametersPath);
+                var format = parameters.Get("option", "format", "");
+                var templatesDirectory = parameters.Get("option", "templates-directory", "");
+                var xmlPath = parameters.Get("option", "templates-directory", "");
+                var outputDirectory = parameters.Get("option", "templates-directory", "");
+                var preCommandPath = parameters.Get("option", "templates-directory", "");
+                var preCommandArguments = parameters.Get("option", "templates-directory", "");
+                var postCommandPath = parameters.Get("option", "templates-directory", "");
+                var postCommandArguments = parameters.Get("option", "templates-directory", "");
+                Process.Start(preCommandPath, preCommandArguments)?.WaitForExit();
+                var outputPath = outputDirectory + Path.GetFileNameWithoutExtension(parametersPath) + "." + format;
+                File.WriteAllText(outputPath, Expander.Expansion(format, templatesDirectory, ReadXml(xmlPath), parameters));
                 Process.Start(postCommandPath, postCommandArguments)?.WaitForExit();
                 Environment.Exit(0);
             }
-            // catch (Exception exception)
+            catch (Exception exception)
             {
-                // Console.WriteLine(exception.Message);
+                Console.WriteLine(exception.Message);
                 Environment.Exit(1);
             }
         }

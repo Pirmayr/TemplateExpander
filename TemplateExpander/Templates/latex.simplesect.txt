@@ -1,5 +1,5 @@
 
 
-\paragraph{%kind%}
+\subsubsection*{%kind%}
 
 %para%
