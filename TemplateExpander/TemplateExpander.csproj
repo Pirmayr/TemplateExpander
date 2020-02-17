@@ -54,14 +54,10 @@
     <None Include="App.config" />
     <None Include="doxygen\Doxyfile" />
     <None Include="manual.md" />
-    <None Include="md\Developer.md" />
-    <None Include="md\User.md" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Developer - Copy.txt" />
     <Content Include="Developer.txt" />
-    <Content Include="latex\Developer.latex" />
-    <Content Include="latex\User.latex" />
+    <Content Include="doc\developer.md" />
     <Content Include="Templates\latex.compounddef.txt" />
     <Content Include="Templates\latex.doxygenindex.txt" />
     <Content Include="Templates\latex.emphasis.txt" />
@@ -76,6 +72,22 @@
     <Content Include="Templates\latex.simplesect.txt" />
     <Content Include="Templates\latex.title.txt" />
     <Content Include="Templates\latex.param.txt" />
+    <Content Include="Templates\latex_class.tpl" />
+    <Content Include="Templates\latex_compounds.tpl" />
+    <Content Include="Templates\latex_documentation.tpl" />
+    <Content Include="Templates\latex_function.tpl" />
+    <Content Include="Templates\latex_interface.tpl" />
+    <Content Include="Templates\latex_itemizedlist.tpl" />
+    <Content Include="Templates\latex_listitem.tpl" />
+    <Content Include="Templates\latex_members.tpl" />
+    <Content Include="Templates\latex_parameteritem.tpl" />
+    <Content Include="Templates\latex_parameterlist.tpl" />
+    <Content Include="Templates\latex_protected-func.tpl" />
+    <Content Include="Templates\latex_public-func.tpl" />
+    <Content Include="Templates\latex_replacements.txt" />
+    <Content Include="Templates\latex_sections.tpl" />
+    <Content Include="Templates\latex_simplesect.tpl" />
+    <Content Include="Templates\latex_verbatim.tpl" />
     <Content Include="Templates\md.compounddef.txt" />
     <Content Include="Templates\md.doxygenindex.txt" />
     <Content Include="Templates\md.emphasis.txt" />

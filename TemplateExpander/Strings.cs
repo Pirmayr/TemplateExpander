@@ -8,7 +8,7 @@ namespace TemplateExpander
         {
             if (!ContainsKey(key))
             {
-                Add(key, "");
+                Add(key, value);
             }
             this[key] += value;
         }

@@ -13,7 +13,7 @@ namespace TemplateExpander
             foreach (var currentLine in File.ReadAllLines(path))
             {
                 var currentItems = currentLine.Split(';');
-                if (currentItems.Length == 3)
+                if (3 <= currentItems.Length && currentItems.Length <= 4)
                 {
                     var currentName = currentItems[0];
                     var currentKey = currentItems[1];
@@ -56,6 +56,19 @@ namespace TemplateExpander
         public string[] GetValues(string name, string key, string defaultValue)
         {
             return Get(name, key, defaultValue).Split(SeparatorValues);
+        }
+
+        private bool ConditionOk(string condition1, string condition2)
+        {
+            if (string.IsNullOrEmpty(condition1))
+            {
+                return true;
+            }
+            if (string.IsNullOrEmpty(condition2))
+            {
+                return true;
+            }
+            return condition1 == condition2;
         }
     }
 }

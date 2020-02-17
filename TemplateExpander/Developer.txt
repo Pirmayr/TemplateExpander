@@ -1,9 +1,13 @@
 option;format;md
 option;templates-directory;Templates/
 option;xml-path;xml/index.xml
-option;output-directory;md/
-option;pre-command-path;doxygen/doxygen.exe
-option;pre-command-arguments;doxygen/Doxyfile
+option;output-directory;doc/
+option;pre-command-path;./doxygen/doxygen
+option;pre-command-arguments;./doxygen/Doxyfile
+option;post-command-path;pdflatex
+option;post-command-arguments;-output-directory {0} {1} 
+option;post-command-parameter-0;./doc
+option;post-command-parameter-1;./doc/Developer.latex
 alias;class;Klasse
 alias;file;Datei
 alias;function;Funktion
