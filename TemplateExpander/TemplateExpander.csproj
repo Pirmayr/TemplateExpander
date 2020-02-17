@@ -58,6 +58,7 @@
     <None Include="md\User.md" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Developer - Copy.txt" />
     <Content Include="Developer.txt" />
     <Content Include="latex\Developer.latex" />
     <Content Include="latex\User.latex" />
@@ -82,6 +83,7 @@
     <Content Include="Templates\md.itemizedlist.txt" />
     <Content Include="Templates\md.listitem.txt" />
     <Content Include="Templates\md.memberdef.txt" />
+    <Content Include="Templates\md.param.txt" />
     <Content Include="Templates\md.parameteritem.txt" />
     <Content Include="Templates\md.parameterlist.txt" />
     <Content Include="Templates\md.ref.txt" />

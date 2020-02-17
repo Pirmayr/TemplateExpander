@@ -144,6 +144,12 @@ namespace TemplateExpander
       return result;
     }
 
+    /// <summary>Reads all template-files in a directory.</summary>
+    /// <param name="templatesDirectory">Directory with template-files.</param>
+    /// <returns>A dictionary with the templates read.</returns>
+    /// <remarks>
+    /// The keys of the dictionary are the filenames (without extension) of the template-files. The keys in turn are the names of nodes or attributes in the XML-file.
+    /// </remarks>
     private static Strings ReadTemplates(string templatesDirectory)
     {
       Strings result = new Strings();

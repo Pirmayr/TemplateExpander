@@ -3,7 +3,6 @@
 ## Klasse TemplateExpander::Expander<br>
 ### Öffentliche statische Methoden<br>
 <a href="#FunktionstringExpansion">Funktion string Expansion</a><br>
-<a href="#FunktionstringReplaceWord">Funktion string ReplaceWord</a><br>
 ### Private statische Methoden<br>
 <a href="#FunktionboolAccept">Funktion bool Accept</a><br>
 <a href="#FunktionvoidAddExpansion">Funktion void AddExpansion</a><br>
@@ -13,27 +12,232 @@
 <a href="#FunktionHashSet< string >GetFormats">Funktion HashSet< string > GetFormats</a><br>
 <a href="#FunktionstringGetTemplate">Funktion string GetTemplate</a><br>
 <a href="#FunktionHashSet< string >GetVariables">Funktion HashSet< string > GetVariables</a><br>
-<a href="#FunktionParametersReadParameters">Funktion Parameters ReadParameters</a><br>
 <a href="#FunktionStringsReadTemplates">Funktion Strings ReadTemplates</a><br>
 <a href="#FunktionstringRemoveVariables">Funktion string RemoveVariables</a><br>
 <a href="#FunktionstringReplaceExhaustive">Funktion string ReplaceExhaustive</a><br>
+<a href="#FunktionstringReplaceWord">Funktion string ReplaceWord</a><br>
 
 # Klasse TemplateExpander::Expander
 
 ## Öffentliche statische Methoden
 
 <a id="FunktionstringExpansion"></a>
-### Funktion string Expansion
+### Funktion Expansion
 
-<a id="FunktionstringReplaceWord"></a>
-### Funktion string ReplaceWord
+#### Declaration
 
-Replaces word in text.
+<pre>string Expansion
+(
+    string format
+    string templatesDirectory
+    XmlNode root
+    Parameters parameters
+)
+</pre>
+
+## Private statische Methoden
+
+<a id="FunktionboolAccept"></a>
+### Funktion Accept
+
+Checks, if the node is accepted for processing.
+
+#### Declaration
+
+<pre>bool Accept
+(
+    XmlNode node
+    Parameters parameters
+)
+</pre>
 
 #### Parameters
 
-| Typ | Beschreibung |
-| --- | --- |
+| Name | Beschreibung |
+| :--- | :--- |
+| node | Node |
+| parameters | Parameters |
+
+#### Rückgabewert
+
+true if the node ist accepted; otherwise, false.
+
+<a id="FunktionvoidAddExpansion"></a>
+### Funktion AddExpansion
+
+#### Declaration
+
+<pre>void AddExpansion
+(
+    Strings expansions
+    string key
+    string value
+    Parameters parameters
+)
+</pre>
+
+<a id="FunktionvoidAddExpansions"></a>
+### Funktion AddExpansions
+
+#### Declaration
+
+<pre>void AddExpansions
+(
+    string format
+    IEnumerable nodes
+    bool isValueTemplate
+    bool prefixVariable
+    Strings expansions
+    Parameters parameters
+    Strings templates
+    StringsStack stringsStack
+)
+</pre>
+
+<a id="FunktionstringCleanValue"></a>
+### Funktion CleanValue
+
+Cleans string.
+
+#### Declaration
+
+<pre>string CleanValue
+(
+    string value
+    bool removeCarriageReturn
+)
+</pre>
+
+#### Parameters
+
+| Name | Beschreibung |
+| :--- | :--- |
+| value | String to be cleaned. |
+| removeCarriageReturn | Should carriage-returns be removed by replacing them with blanks? |
+
+#### Rückgabewert
+
+Cleaned string.
+
+<a id="FunktionstringExpansion"></a>
+### Funktion Expansion
+
+#### Declaration
+
+<pre>string Expansion
+(
+    string format
+    XmlNode node
+    Parameters parameters
+    Strings templates
+    StringsStack expansionsStack
+)
+</pre>
+
+<a id="FunktionHashSet< string >GetFormats"></a>
+### Funktion GetFormats
+
+#### Declaration
+
+<pre>HashSet< string > GetFormats
+(
+    HashSet< string > variables
+)
+</pre>
+
+<a id="FunktionstringGetTemplate"></a>
+### Funktion GetTemplate
+
+#### Declaration
+
+<pre>string GetTemplate
+(
+    string templateSet
+    string tag
+    Strings templates
+)
+</pre>
+
+<a id="FunktionHashSet< string >GetVariables"></a>
+### Funktion GetVariables
+
+#### Declaration
+
+<pre>HashSet< string > GetVariables
+(
+    string text
+)
+</pre>
+
+<a id="FunktionStringsReadTemplates"></a>
+### Funktion ReadTemplates
+
+Reads all template-files in a directory.
+
+#### Declaration
+
+<pre>Strings ReadTemplates
+(
+    string templatesDirectory
+)
+</pre>
+
+#### Parameters
+
+| Name | Beschreibung |
+| :--- | :--- |
+| templatesDirectory | Directory with template-files. |
+
+#### Rückgabewert
+
+A dictionary with the templates read.
+
+The keys of the dictionary are the filenames (without extension) of the template-files. The keys in turn are the names of nodes or attributes in the XML-file.
+
+<a id="FunktionstringRemoveVariables"></a>
+### Funktion RemoveVariables
+
+#### Declaration
+
+<pre>string RemoveVariables
+(
+    string text
+)
+</pre>
+
+<a id="FunktionstringReplaceExhaustive"></a>
+### Funktion ReplaceExhaustive
+
+#### Declaration
+
+<pre>string ReplaceExhaustive
+(
+    string value
+    string searchString
+    string replacement
+)
+</pre>
+
+<a id="FunktionstringReplaceWord"></a>
+### Funktion ReplaceWord
+
+Replaces word in text.
+
+#### Declaration
+
+<pre>string ReplaceWord
+(
+    this string text
+    string word
+    string replacement
+    RegexOptions options
+)
+</pre>
+
+#### Parameters
+
+| Name | Beschreibung |
+| :--- | :--- |
 | text | Text |
 | word | Word |
 | replacement | Replacement |
@@ -42,67 +246,3 @@ Replaces word in text.
 #### Rückgabewert
 
 String with word replaced.
-
-## Private statische Methoden
-
-<a id="FunktionboolAccept"></a>
-### Funktion bool Accept
-
-Checks, if the node is accepted for processing.
-
-#### Parameters
-
-| Typ | Beschreibung |
-| --- | --- |
-| node | Node |
-| Parameter | Parameters |
-
-#### Rückgabewert
-
-"true" if the node ist accepted; otherwise, false.
-
-<a id="FunktionvoidAddExpansion"></a>
-### Funktion void AddExpansion
-
-<a id="FunktionvoidAddExpansions"></a>
-### Funktion void AddExpansions
-
-<a id="FunktionstringCleanValue"></a>
-### Funktion string CleanValue
-
-Cleans string.
-
-#### Parameters
-
-| Typ | Beschreibung |
-| --- | --- |
-| Value | String to be cleaned. |
-| removeCarriageReturn | Should carriage-returns be removed by replacing them with blanks? |
-
-#### Rückgabewert
-
-Cleaned string.
-
-<a id="FunktionstringExpansion"></a>
-### Funktion string Expansion
-
-<a id="FunktionHashSet< string >GetFormats"></a>
-### Funktion HashSet< string > GetFormats
-
-<a id="FunktionstringGetTemplate"></a>
-### Funktion string GetTemplate
-
-<a id="FunktionHashSet< string >GetVariables"></a>
-### Funktion HashSet< string > GetVariables
-
-<a id="FunktionParametersReadParameters"></a>
-### Funktion Parameters ReadParameters
-
-<a id="FunktionStringsReadTemplates"></a>
-### Funktion Strings ReadTemplates
-
-<a id="FunktionstringRemoveVariables"></a>
-### Funktion string RemoveVariables
-
-<a id="FunktionstringReplaceExhaustive"></a>
-### Funktion string ReplaceExhaustive

@@ -57,15 +57,17 @@ namespace TemplateExpander
           string postCommandParameter0 = parameters.Get("option", "post-command-parameter-0", "");
           string postCommandParameter1 = parameters.Get("option", "post-command-parameter-1", "");
           string postCommandArguments = string.Format(parameters.Get("option", "post-command-arguments", ""), postCommandParameter0, postCommandParameter1);
-
-          preCommandPath = File.Exists(optionsDirectory + preCommandPath)? optionsDirectory + preCommandPath : preCommandPath;
-          postCommandPath = File.Exists(optionsDirectory + postCommandPath)? optionsDirectory + postCommandPath : postCommandPath;
+          preCommandPath = File.Exists(optionsDirectory + preCommandPath) ? optionsDirectory + preCommandPath : preCommandPath;
+          postCommandPath = File.Exists(optionsDirectory + postCommandPath) ? optionsDirectory + postCommandPath : postCommandPath;
           Directory.SetCurrentDirectory(optionsDirectory);
           Process.Start(preCommandPath, preCommandArguments)?.WaitForExit();
           string outputPath = outputDirectory + Path.GetFileNameWithoutExtension(currentTarget) + "." + format;
           File.WriteAllText(outputPath, Expander.Expansion(format, templatesDirectory, ReadXml(xmlPath), parameters));
-          Directory.SetCurrentDirectory(optionsDirectory);
-          Process.Start(postCommandPath, postCommandArguments)?.WaitForExit();
+          if (!string.IsNullOrEmpty(postCommandPath))
+          {
+            Directory.SetCurrentDirectory(optionsDirectory);
+            Process.Start(postCommandPath, postCommandArguments)?.WaitForExit();
+          }
           Environment.Exit(0);
         }
       }
