@@ -1,3 +1,0 @@
-% Begin compounds ...
-%compounds%
-% End compounds.

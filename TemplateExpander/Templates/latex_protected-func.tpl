@@ -1,3 +1,0 @@
-% Begin protected-func ...
-%protected-func%
-% End protected-func.
