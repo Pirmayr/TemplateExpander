@@ -2,8 +2,11 @@
 
 \subsubsection{%kind% %name%}
 
-\begin{verbatim}%type% %name%%argsstring%\end{verbatim}
-
 %briefdescription%
+
+\begin{verbatim}%type% %name%
+(
+%param%)
+\end{verbatim}
 
 %detaileddescription%

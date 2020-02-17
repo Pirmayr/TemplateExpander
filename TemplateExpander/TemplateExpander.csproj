@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -74,6 +74,7 @@
     <Content Include="Templates\latex.sectiondef.txt" />
     <Content Include="Templates\latex.simplesect.txt" />
     <Content Include="Templates\latex.title.txt" />
+    <Content Include="Templates\latex.param.txt" />
     <Content Include="Templates\md.compounddef.txt" />
     <Content Include="Templates\md.doxygenindex.txt" />
     <Content Include="Templates\md.emphasis.txt" />

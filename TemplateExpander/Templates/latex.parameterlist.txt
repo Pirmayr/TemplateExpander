@@ -1,7 +1,8 @@
 
 
-\subsubsection*{Parameter}
-\begin{tabular}{ |p{40mm}|p{75mm}| } 
+\begin{tabular}{|c|c|} 
+\hline
+\cellcolor{orange} Name & \cellcolor{orange} Beschreibung \\
 \hline
 %parameteritem%
 \end{tabular}

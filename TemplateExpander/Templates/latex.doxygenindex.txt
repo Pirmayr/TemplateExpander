@@ -5,7 +5,10 @@
 \usepackage[utf8]{inputenc}
 \usepackage[german]{babel}
 \usepackage{parskip}
+\usepackage{colortbl}
+\definecolor{orange}{rgb}{1,0.647,0}
 \begin{document}
+\setlength{\arrayrulewidth}{.8pt}
 \tableofcontents 
 %compounddef%
 \end{document}
