@@ -11,6 +11,9 @@ namespace TemplateExpander
     internal static class Expander
     {
         private const string DefaultFilter = ".";
+        /// <summary>
+        /// The delimiter for variables in templates.
+        /// </summary>
         private const string DelimiterVariable = "%";
         private const string ExtensionTemplate = ".txt";
         private const string NameAlias = "alias";
@@ -101,6 +104,14 @@ namespace TemplateExpander
             return CleanValue(node.Value, true);
         }
 
+        /// <summary>
+        /// Gets the requested formats from the given variables.
+        /// </summary>
+        /// <param name="variables">Variables</param>
+        /// <returns>The requested formats.</returns>
+        /// <remarks>
+        /// Example: In *mdtoc:heading* the format *mdtoc* is requested for the variable *heading*.
+        /// </remarks>
         private static HashSet<string> GetFormats(HashSet<string> variables)
         {
             var result = new HashSet<string>();
