@@ -1,4 +1,4 @@
-option;format;md
+option;format;latex|md
 option;templates-directory;Templates/
 option;xml-path;xml/index.xml
 option;output-directory;doc/

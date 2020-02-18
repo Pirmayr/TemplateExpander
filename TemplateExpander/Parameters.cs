@@ -57,18 +57,5 @@ namespace TemplateExpander
         {
             return Get(name, key, defaultValue).Split(SeparatorValues);
         }
-
-        private bool ConditionOk(string condition1, string condition2)
-        {
-            if (string.IsNullOrEmpty(condition1))
-            {
-                return true;
-            }
-            if (string.IsNullOrEmpty(condition2))
-            {
-                return true;
-            }
-            return condition1 == condition2;
-        }
     }
 }

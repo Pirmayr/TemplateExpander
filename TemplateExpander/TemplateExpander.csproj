@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Developer.txt" />
+    <Content Include="doc\developer.latex" />
     <Content Include="doc\developer.md" />
     <Content Include="Templates\latex.compounddef.txt" />
     <Content Include="Templates\latex.doxygenindex.txt" />
