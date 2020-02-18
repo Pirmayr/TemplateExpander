@@ -51,7 +51,19 @@ namespace TemplateExpander
       string actualValue = value;
       actualValue = parameters.Get(NameReplacement).Aggregate(actualValue, (current, currentReplacement) => ReplaceWord(current, currentReplacement.Key, currentReplacement.Value));
       actualValue = parameters.Get(NameAlias).Aggregate(actualValue, (current, currentAlias) => currentAlias.Key == value ? currentAlias.Value : current);
-      expansions.Append(key, RemoveVariables(actualValue));
+      actualValue = RemoveVariables(actualValue);
+      expansions.Append(key,actualValue);
+      
+      for (int i = 0; i < 10; ++i)
+      {
+        var currentKey = DelimiterVariable + key.Trim('%') + i + DelimiterVariable;
+
+        if (!expansions.ContainsKey(currentKey))
+        {
+          expansions.Add(currentKey, actualValue);
+          break;
+        }
+      }
     }
 
     private static void AddExpansions(string format, IEnumerable nodes, bool isValueTemplate, bool prefixVariable, Strings expansions, Parameters parameters, Strings templates, StringsStack stringsStack)

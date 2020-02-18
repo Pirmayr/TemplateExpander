@@ -75,6 +75,7 @@
     <Content Include="Templates\latex.title.txt" />
     <Content Include="Templates\latex.param.txt" />
     <Content Include="Templates\md.compounddef.txt" />
+    <Content Include="Templates\md.detaileddescription.txt" />
     <Content Include="Templates\md.doxygenindex.txt" />
     <Content Include="Templates\md.emphasis.txt" />
     <Content Include="Templates\md.heading.txt" />
@@ -94,6 +95,7 @@
     <Content Include="Templates\mdtoc.para.txt" />
     <Content Include="Templates\mdtoc.memberdef.txt" />
     <Content Include="Templates\mdtoc.sectiondef.txt" />
+    <Content Include="Templates\mddescription.para.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

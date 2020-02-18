@@ -164,7 +164,9 @@ Gets the requested formats from the given variables.
 
 The requested formats.
 
-Example: In _mdtoc:heading_ the format _mdtoc_ is requested for the variable _heading_ .
+#### Hinweise
+
+Example: Inmdtoc:headingthe formatmdtocis requested for the variableheading.
 
 <a id="FunktionstringGetTemplate"></a>
 ### Funktion GetTemplate
@@ -212,6 +214,8 @@ Reads all template-files in a directory.
 #### Rückgabewert
 
 A dictionary with the templates read.
+
+#### Hinweise
 
 The keys of the dictionary are the filenames (without extension) of the template-files. The keys in turn are the names of nodes or attributes in the XML-file.
 
