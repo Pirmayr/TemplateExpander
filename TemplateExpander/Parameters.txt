@@ -1,0 +1,23 @@
+*;*;option;templates-directory;Templates/
+*;*;option;xml-path;xml/index.xml
+*;*;option;output-directory;doc/
+*;*;option;pre-command-path;./doxygen/doxygen.exe
+*;*;option;pre-command-arguments;./doxygen/Doxyfile
+*;latex;option;post-command-path;pdflatex
+*;latex;option;post-command-arguments;%target%.latex 
+*;*;alias;class;Klasse
+*;*;alias;file;Datei
+*;*;alias;function;Funktion
+*;*;alias;md_manual;Documentation
+*;*;alias;namespace;Namensraum
+*;*;alias;page;
+*;*;alias;private-attrib;Private Konstanten
+*;*;alias;public-static-func;Öffentliche statische Methoden
+*;*;alias;private-static-func;Private statische Methoden
+*;*;alias;remark;Anmerkungen
+*;*;alias;return;Rückgabewert
+developer;*;filter;compounddef;self::*[@id="class_template_expander_1_1_expander"]
+developer;*;filter;compounddef;self::*[@id="class_template_expander_1_1_program"]
+developer;*;filter;sectiondef;self::*[@kind="public-static-func"]
+developer;*;filter;sectiondef;self::*[@kind="private-static-func"]
+user;*;filter;compounddef;self::*[@id="md_manual"]

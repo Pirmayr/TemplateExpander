@@ -8,10 +8,11 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>TemplateExpander</RootNamespace>
     <AssemblyName>TemplateExpander</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -56,7 +57,7 @@
     <None Include="manual.md" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Developer.txt" />
+    <Content Include="Parameters.txt" />
     <Content Include="doc\developer.latex" />
     <Content Include="doc\developer.md" />
     <Content Include="Templates\latex.compounddef.txt" />
@@ -93,7 +94,6 @@
     <Content Include="Templates\mdtoc.para.txt" />
     <Content Include="Templates\mdtoc.memberdef.txt" />
     <Content Include="Templates\mdtoc.sectiondef.txt" />
-    <Content Include="User.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
