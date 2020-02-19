@@ -166,7 +166,7 @@ The requested formats.
 
 #### Hinweise
 
-Example: Inmdtoc:headingthe formatmdtocis requested for the variableheading.
+Example: In _mdtoc:heading_ the format _mdtoc_ is requested for the variable _heading_ .
 
 <a id="FunktionstringGetTemplate"></a>
 ### Funktion GetTemplate
@@ -222,6 +222,8 @@ The keys of the dictionary are the filenames (without extension) of the template
 <a id="FunktionstringRemoveVariables"></a>
 ### Funktion RemoveVariables
 
+Removes unused variables from the given text.
+
 #### Declaration
 
 <pre>string RemoveVariables
@@ -229,6 +231,8 @@ The keys of the dictionary are the filenames (without extension) of the template
     string text
 )
 </pre>
+
+This is a remark.
 
 <a id="FunktionstringReplaceExhaustive"></a>
 ### Funktion ReplaceExhaustive

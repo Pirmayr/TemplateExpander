@@ -207,11 +207,15 @@ The keys of the dictionary are the filenames (without extension) of the template
 
 \subsubsection{Funktion RemoveVariables}
 
+Removes unused variables from the given text.
+
 \begin{verbatim}string RemoveVariables
 (
     string text
 )
 \end{verbatim}
+
+This is a remark.
 
 \goodbreak
 

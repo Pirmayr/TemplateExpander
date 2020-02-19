@@ -89,6 +89,7 @@
     <Content Include="Templates\md.sectiondef.txt" />
     <Content Include="Templates\md.simplesect.txt" />
     <Content Include="Templates\md.title.txt" />
+    <Content Include="Templates\mddescription.emphasis.txt" />
     <Content Include="Templates\mdtoc.compounddef.txt" />
     <Content Include="Templates\mdtoc.detaileddescription.txt" />
     <Content Include="Templates\mdtoc.heading.txt" />
@@ -96,6 +97,11 @@
     <Content Include="Templates\mdtoc.memberdef.txt" />
     <Content Include="Templates\mdtoc.sectiondef.txt" />
     <Content Include="Templates\mddescription.para.txt" />
+    <Content Include="xml\all.xml" />
+    <Content Include="xml\class_template_expander_1_1_expander.xml" />
+    <Content Include="xml\combine.xslt" />
+    <Content Include="xml\index.xml" />
+    <Content Include="xml\test.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
