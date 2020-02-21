@@ -1,5 +1,5 @@
 *;*;option;templates-directory;Templates/
-*;*;option;xml-path;xml/index.xml
+*;*;option;xml-path;xml/intermediate.xml
 *;*;option;output-directory;doc/
 *;*;option;pre-command-path;./doxygen/doxygen.exe
 *;*;option;pre-command-arguments;./doxygen/Doxyfile

@@ -1,0 +1,5 @@
+﻿
+
+| Name | Typ | Beschreibung |
+| :--- | :--- |	:--- |
+%parameter%

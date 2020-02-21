@@ -74,35 +74,19 @@
     <Content Include="Templates\latex.simplesect.txt" />
     <Content Include="Templates\latex.title.txt" />
     <Content Include="Templates\latex.param.txt" />
-    <Content Include="Templates\md.compounddef.txt" />
-    <Content Include="Templates\md.detaileddescription.txt" />
-    <Content Include="Templates\md.doxygenindex.txt" />
-    <Content Include="Templates\md.emphasis.txt" />
-    <Content Include="Templates\md.heading.txt" />
-    <Content Include="Templates\md.itemizedlist.txt" />
-    <Content Include="Templates\md.listitem.txt" />
-    <Content Include="Templates\md.memberdef.txt" />
-    <Content Include="Templates\md.param.txt" />
-    <Content Include="Templates\md.parameteritem.txt" />
-    <Content Include="Templates\md.parameterlist.txt" />
-    <Content Include="Templates\md.ref.txt" />
-    <Content Include="Templates\md.sectiondef.txt" />
-    <Content Include="Templates\md.simplesect.txt" />
-    <Content Include="Templates\md.title.txt" />
-    <Content Include="Templates\mddescription.emphasis.txt" />
-    <Content Include="Templates\mdtoc.compounddef.txt" />
-    <Content Include="Templates\mdtoc.detaileddescription.txt" />
-    <Content Include="Templates\mdtoc.heading.txt" />
-    <Content Include="Templates\mdtoc.para.txt" />
-    <Content Include="Templates\mdtoc.memberdef.txt" />
-    <Content Include="Templates\mdtoc.sectiondef.txt" />
-    <Content Include="Templates\mddescription.para.txt" />
-    <Content Include="xml\all.xml" />
+    <Content Include="Templates\md.compound.txt" />
+    <Content Include="Templates\md.description.txt" />
+    <Content Include="Templates\md.documentation.txt" />
+    <Content Include="Templates\md.member.txt" />
+    <Content Include="Templates\md.parameter.txt" />
+    <Content Include="Templates\md.parameters.txt" />
+    <Content Include="Templates\md.section.txt" />
     <Content Include="xml\class_template_expander_1_1_expander.xml" />
-    <Content Include="xml\combine.xslt" />
-    <Content Include="xml\index.xml" />
-    <Content Include="xml\test.xml" />
+    <Content Include="xml\doxygen.xsl" />
+    <Content Include="xml\intermediate.xml" />
+    <Content Include="xml\md_manual.xml" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>

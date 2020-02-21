@@ -54,10 +54,6 @@ namespace TemplateExpander
             for (var i = 0; i < 10; ++i)
             {
                 var currentKey = DelimiterVariable + key.Trim('%') + i + DelimiterVariable;
-                if (currentKey == "%mddescription:para1%")
-                {
-                    int a = 0;
-                }
                 if (!expansions.ContainsKey(currentKey))
                 {
                     expansions.Add(currentKey, actualValue);

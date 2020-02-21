@@ -1,0 +1,381 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<documentation>
+  <compound name="TemplateExpander::Expander" kind="class">
+    <section kind="private-static-attrib">
+      <member name="DefaultFilter" kind="variable" type="const string" />
+      <member name="DelimiterVariable" kind="variable" type="const string">
+        <brief>
+          <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">The delimiter for variables in templates. </para>
+        </brief>
+      </member>
+      <member name="ExtensionTemplate" kind="variable" type="const string" />
+      <member name="NameAlias" kind="variable" type="const string" />
+      <member name="NameFilter" kind="variable" type="const string" />
+      <member name="NameReplacement" kind="variable" type="const string" />
+      <member name="SeparatorFormat" kind="variable" type="const char" />
+      <member name="ValueName" kind="variable" type="const string" />
+      <member name="VariableNameValue" kind="variable" type="const string" />
+    </section>
+    <section kind="public-static-func">
+      <member name="Expansion" kind="function" type="string">
+        <parameters>
+          <parameter name="format" type="string" />
+          <parameter name="templatesDirectory" type="string" />
+          <parameter name="root" type="XmlNode" />
+          <parameter name="parameters" type="Parameters" />
+        </parameters>
+      </member>
+    </section>
+    <section kind="private-static-func">
+      <member name="Accept" kind="function" type="bool">
+        <brief>
+          <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Checks, if the node is accepted for processing. </para>
+        </brief>
+        <parameters>
+          <parameter name="node" type="XmlNode">
+            <brief>
+              <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Node</para>
+            </brief>
+          </parameter>
+          <parameter name="parameters" type="Parameters">
+            <brief>
+              <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Parameters</para>
+            </brief>
+          </parameter>
+        </parameters>
+        <returns>
+          <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">true if the node ist accepted; otherwise, false.</para>
+        </returns>
+      </member>
+      <member name="AddExpansion" kind="function" type="void">
+        <parameters>
+          <parameter name="expansions" type="Strings" />
+          <parameter name="key" type="string" />
+          <parameter name="value" type="string" />
+          <parameter name="parameters" type="Parameters" />
+        </parameters>
+      </member>
+      <member name="AddExpansions" kind="function" type="void">
+        <parameters>
+          <parameter name="format" type="string" />
+          <parameter name="nodes" type="IEnumerable" />
+          <parameter name="isValueTemplate" type="bool" />
+          <parameter name="prefixVariable" type="bool" />
+          <parameter name="expansions" type="Strings" />
+          <parameter name="parameters" type="Parameters" />
+          <parameter name="templates" type="Strings" />
+          <parameter name="stringsStack" type="StringsStack" />
+        </parameters>
+      </member>
+      <member name="CleanValue" kind="function" type="string">
+        <brief>
+          <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Cleans string. </para>
+        </brief>
+        <parameters>
+          <parameter name="value" type="string">
+            <brief>
+              <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">String to be cleaned.</para>
+            </brief>
+          </parameter>
+          <parameter name="removeCarriageReturn" type="bool">
+            <brief>
+              <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Should carriage-returns be removed by replacing them with blanks?</para>
+            </brief>
+          </parameter>
+        </parameters>
+        <returns>
+          <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Cleaned string.</para>
+        </returns>
+      </member>
+      <member name="Expansion" kind="function" type="string">
+        <parameters>
+          <parameter name="format" type="string" />
+          <parameter name="node" type="XmlNode" />
+          <parameter name="parameters" type="Parameters" />
+          <parameter name="templates" type="Strings" />
+          <parameter name="expansionsStack" type="StringsStack" />
+        </parameters>
+      </member>
+      <member name="GetFormats" kind="function" type="HashSet&lt; string &gt;">
+        <brief>
+          <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Gets the requested formats from the given variables. </para>
+        </brief>
+        <parameters>
+          <parameter name="variables" type="HashSet&lt; string &gt;">
+            <brief>
+              <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Variables</para>
+            </brief>
+          </parameter>
+        </parameters>
+        <returns>
+          <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">The requested formats.</para>
+        </returns>
+        <remarks>
+          <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Example: In <emphasis>mdtoc:heading</emphasis> the format <emphasis>mdtoc</emphasis> is requested for the variable <emphasis>heading</emphasis>.</para>
+        </remarks>
+      </member>
+      <member name="GetTemplate" kind="function" type="string">
+        <parameters>
+          <parameter name="templateSet" type="string" />
+          <parameter name="tag" type="string" />
+          <parameter name="templates" type="Strings" />
+        </parameters>
+      </member>
+      <member name="GetVariables" kind="function" type="HashSet&lt; string &gt;">
+        <parameters>
+          <parameter name="text" type="string" />
+        </parameters>
+      </member>
+      <member name="ReadTemplates" kind="function" type="Strings">
+        <brief>
+          <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Reads all template-files in a directory. </para>
+        </brief>
+        <parameters>
+          <parameter name="templatesDirectory" type="string">
+            <brief>
+              <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Directory with template-files.</para>
+            </brief>
+          </parameter>
+        </parameters>
+        <returns>
+          <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">A dictionary with the templates read.</para>
+        </returns>
+        <remarks>
+          <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">The keys of the dictionary are the filenames (without extension) of the template-files. The keys in turn are the names of nodes or attributes in the XML-file.</para>
+        </remarks>
+      </member>
+      <member name="RemoveVariables" kind="function" type="string">
+        <brief>
+          <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Removes unused variables from the given text. </para>
+        </brief>
+        <parameters>
+          <parameter name="text" type="string" />
+        </parameters>
+        <remarks>
+          <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">This is a remark.</para>
+        </remarks>
+      </member>
+      <member name="ReplaceExhaustive" kind="function" type="string">
+        <parameters>
+          <parameter name="value" type="string" />
+          <parameter name="searchString" type="string" />
+          <parameter name="replacement" type="string" />
+        </parameters>
+      </member>
+      <member name="ReplaceWord" kind="function" type="string">
+        <brief>
+          <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Replaces word in text. </para>
+        </brief>
+        <parameters>
+          <parameter name="text" type="this string">
+            <brief>
+              <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Text</para>
+            </brief>
+          </parameter>
+          <parameter name="word" type="string">
+            <brief>
+              <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Word</para>
+            </brief>
+          </parameter>
+          <parameter name="replacement" type="string">
+            <brief>
+              <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Replacement</para>
+            </brief>
+          </parameter>
+          <parameter name="options" type="RegexOptions">
+            <brief>
+              <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Options</para>
+            </brief>
+          </parameter>
+        </parameters>
+        <returns>
+          <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">String with word replaced.</para>
+        </returns>
+      </member>
+    </section>
+    <description />
+  </compound>
+  <compound name="TemplateExpander::Parameters" kind="class">
+    <section kind="public-static-attrib">
+      <member name="SeparatorValues" kind="variable" type="const char" />
+    </section>
+    <section kind="public-static-func">
+      <member name="Accept" kind="function" type="bool">
+        <parameters>
+          <parameter name="target" type="string" />
+          <parameter name="currentTarget" type="string" />
+          <parameter name="format" type="string" />
+          <parameter name="currentFormat" type="string" />
+        </parameters>
+      </member>
+      <member name="ReadParameters" kind="function" type="Parameters">
+        <parameters>
+          <parameter name="path" type="string" />
+          <parameter name="target" type="string" />
+          <parameter name="format" type="string" />
+        </parameters>
+      </member>
+    </section>
+    <section kind="public-func">
+      <member name="Get" kind="function" type="Strings">
+        <parameters>
+          <parameter name="name" type="string" />
+        </parameters>
+      </member>
+      <member name="Get" kind="function" type="string">
+        <parameters>
+          <parameter name="name" type="string" />
+          <parameter name="key" type="string" />
+          <parameter name="defaultValue" type="string" />
+        </parameters>
+      </member>
+      <member name="GetValues" kind="function" type="string[]">
+        <parameters>
+          <parameter name="name" type="string" />
+          <parameter name="key" type="string" />
+          <parameter name="defaultValue" type="string" />
+        </parameters>
+      </member>
+    </section>
+    <description />
+  </compound>
+  <compound name="TemplateExpander::Program" kind="class">
+    <section kind="private-static-func">
+      <member name="AddDoxygenCompounds" kind="function" type="void">
+        <parameters>
+          <parameter name="xmlPath" type="string" />
+          <parameter name="root" type="XmlDocument" />
+        </parameters>
+      </member>
+      <member name="ExecuteProgram" kind="function" type="void">
+        <parameters>
+          <parameter name="command" type="string" />
+          <parameter name="arguments" type="string" />
+          <parameter name="workingDirectory" type="string" />
+        </parameters>
+      </member>
+      <member name="Main" kind="function" type="void">
+        <parameters>
+          <parameter name="arguments" type="string[]" />
+        </parameters>
+      </member>
+      <member name="OnDataReceived" kind="function" type="void">
+        <parameters>
+          <parameter name="sender" type="object" />
+          <parameter name="e" type="DataReceivedEventArgs" />
+        </parameters>
+      </member>
+      <member name="ReadXml" kind="function" type="XmlDocument">
+        <parameters>
+          <parameter name="xmlPath" type="string" />
+        </parameters>
+      </member>
+    </section>
+    <description />
+  </compound>
+  <compound name="TemplateExpander::Strings" kind="class">
+    <section kind="public-func">
+      <member name="Append" kind="function" type="void">
+        <parameters>
+          <parameter name="key" type="string" />
+          <parameter name="value" type="string" />
+        </parameters>
+      </member>
+    </section>
+    <description />
+  </compound>
+  <compound name="TemplateExpander::StringsStack" kind="class">
+    <section kind="public-func">
+      <member name="GetActiveValues" kind="function" type="Strings" />
+    </section>
+    <description />
+  </compound>
+  <compound name="System" kind="namespace">
+    <description />
+  </compound>
+  <compound name="System::Collections" kind="namespace">
+    <description />
+  </compound>
+  <compound name="System::Collections::Generic" kind="namespace">
+    <description />
+  </compound>
+  <compound name="System::Diagnostics" kind="namespace">
+    <description />
+  </compound>
+  <compound name="System::IO" kind="namespace">
+    <description />
+  </compound>
+  <compound name="System::Linq" kind="namespace">
+    <description />
+  </compound>
+  <compound name="System::Runtime::InteropServices" kind="namespace">
+    <description />
+  </compound>
+  <compound name="System::Text" kind="namespace">
+    <description />
+  </compound>
+  <compound name="System::Text::RegularExpressions" kind="namespace">
+    <description />
+  </compound>
+  <compound name="System::Xml" kind="namespace">
+    <description />
+  </compound>
+  <compound name="System::Xml::Xsl" kind="namespace">
+    <description />
+  </compound>
+  <compound name="TemplateExpander" kind="namespace">
+    <description />
+  </compound>
+  <compound name="Expander.cs" kind="file">
+    <description />
+  </compound>
+  <compound name="manual.md" kind="file">
+    <description />
+  </compound>
+  <compound name="Parameters.cs" kind="file">
+    <description />
+  </compound>
+  <compound name="Program.cs" kind="file">
+    <description />
+  </compound>
+  <compound name="Strings.cs" kind="file">
+    <description />
+  </compound>
+  <compound name="StringsStack.cs" kind="file">
+    <description />
+  </compound>
+  <compound name="md_manual" kind="page">
+    <description>
+      <section>
+        <title>
+          <title xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Name</title>
+        </title>
+      </section>
+      <section>
+        <title>
+          <title xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Übersicht</title>
+        </title>
+      </section>
+      <section>
+        <title>
+          <title xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Beschreibung</title>
+        </title>
+      </section>
+      <section>
+        <title>
+          <title xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Optionen</title>
+        </title>
+      </section>
+      <section>
+        <title>
+          <title xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Version</title>
+        </title>
+      </section>
+      <section>
+        <title>
+          <title xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Noch ein Abschnitt</title>
+        </title>
+      </section>
+    </description>
+  </compound>
+</documentation>

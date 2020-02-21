@@ -1,1 +1,0 @@
-﻿<a href="#%kind%%type%%name%">%kind% %type% %name%</a><br>

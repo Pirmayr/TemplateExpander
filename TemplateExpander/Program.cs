@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Runtime.InteropServices;
 using System.Xml;
+using System.Xml.Xsl;
 
 namespace TemplateExpander
 {
@@ -10,6 +11,7 @@ namespace TemplateExpander
   {
     private static void AddDoxygenCompounds(string xmlPath, XmlDocument root)
     {
+      /*
       XmlNodeList selectedNodes = root.SelectNodes("/doxygenindex/compound");
       if (selectedNodes != null)
       {
@@ -34,6 +36,7 @@ namespace TemplateExpander
           }
         }
       }
+      */
     }
 
     private static void ExecuteProgram(string command, string arguments, string workingDirectory)
@@ -60,13 +63,13 @@ namespace TemplateExpander
       {
         string[] targets = arguments[0].Split(';');
         string[] formats = arguments[1].Split(';');
-        string optionsDirectory = arguments[2];
+        string optionsPath = arguments[2];
+        string optionsDirectory = Path.GetDirectoryName(optionsPath) + "/";
         foreach (string currentTarget in targets)
         {
           foreach (string currentFormat in formats)
           {
-            string currentOptionsPath = optionsDirectory + "Parameters.txt";
-            Parameters parameters = Parameters.ReadParameters(currentOptionsPath, currentTarget, currentFormat);
+            Parameters parameters = Parameters.ReadParameters(optionsPath, currentTarget, currentFormat);
             string templatesDirectory = optionsDirectory + parameters.Get("option", "templates-directory", "");
             string xmlPath = optionsDirectory + parameters.Get("option", "xml-path", "");
             string outputDirectory = optionsDirectory + parameters.Get("option", "output-directory", "");
@@ -78,7 +81,6 @@ namespace TemplateExpander
             preCommandPath = RuntimeInformation.IsOSPlatform(OSPlatform.Windows) ? preCommandPath : Path.ChangeExtension(preCommandPath, null);
             postCommandPath = File.Exists(optionsDirectory + postCommandPath) ? optionsDirectory + postCommandPath : postCommandPath;
             postCommandPath = RuntimeInformation.IsOSPlatform(OSPlatform.Windows) ? postCommandPath : Path.ChangeExtension(postCommandPath, null);
-            Directory.SetCurrentDirectory(optionsDirectory);
             if (!string.IsNullOrEmpty(preCommandPath))
             {
               ExecuteProgram(preCommandPath, preCommandArguments, optionsDirectory);
@@ -108,10 +110,22 @@ namespace TemplateExpander
 
     private static XmlDocument ReadXml(string xmlPath)
     {
+      /*
       XmlDocument root = new XmlDocument();
       root.LoadXml(File.ReadAllText(xmlPath));
       AddDoxygenCompounds(xmlPath, root);
       return root;
+      */
+
+      var transformFromXml = new XslCompiledTransform();
+      var xslSettings = new XsltSettings(true, true);
+      transformFromXml.Load("xml/doxygen.xsl", xslSettings, new XmlUrlResolver());
+      transformFromXml.Transform("xml/index.xml", xmlPath);
+
+      XmlDocument root = new XmlDocument();
+      root.LoadXml(File.ReadAllText(xmlPath));
+      return root;
+
     }
   }
 }

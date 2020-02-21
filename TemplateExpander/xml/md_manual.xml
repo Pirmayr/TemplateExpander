@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="md_manual" kind="page">
+    <compoundname>md_manual</compoundname>
+    <title>TemplateExpander</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<sect1 id="md_manual_1autotoc_md1">
+<title>Name</title>
+<para><ref refid="namespace_template_expander" kindref="compound">TemplateExpander</ref></para>
+</sect1>
+<sect1 id="md_manual_1autotoc_md2">
+<title>Übersicht</title>
+<para><ref refid="namespace_template_expander" kindref="compound">TemplateExpander</ref> format templates-directory xml-path output-path parameters-path</para>
+</sect1>
+<sect1 id="md_manual_1autotoc_md3">
+<title>Beschreibung</title>
+<para><ref refid="namespace_template_expander" kindref="compound">TemplateExpander</ref> liest eine XML-Datei und transformiert sie anhand der angegebenen Schablonen.</para>
+</sect1>
+<sect1 id="md_manual_1autotoc_md4">
+<title>Optionen</title>
+<para><itemizedlist>
+<listitem><para>format: Gibt an, welcher Schablonensatz verwendet werden soll. Erster Teil des Schablonennamens. Beispiel: &quot;md.para.txt&quot; (Das Format ist hier &quot;md&quot;).</para>
+</listitem></itemizedlist>
+</para>
+</sect1>
+<sect1 id="md_manual_1autotoc_md5">
+<title>Version</title>
+<para>6</para>
+</sect1>
+<sect1 id="md_manual_1autotoc_md6">
+<title>Noch ein Abschnitt</title>
+<sect2 id="md_manual_1autotoc_md7">
+<title>Zweck</title>
+<para>Nur zum Testen.</para>
+<sect3 id="md_manual_1autotoc_md8">
+<title>UnterUnterAbschnitt</title>
+<para>Das ist ein UnterUnterAbschnitt. </para>
+</sect3>
+</sect2>
+</sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

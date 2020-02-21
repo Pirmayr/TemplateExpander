@@ -1,0 +1,6 @@
+﻿
+
+#### %kind% %type% %name%
+
+%parameters%
+
