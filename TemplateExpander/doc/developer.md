@@ -52,7 +52,7 @@ Checks, if the node is accepted for processing.
 
 Rückgabewert
 
-true if the node ist accepted; otherwise, false.
+If the node is accepted, true is returned; otherwise, false.
 
 #### Funktion void AddExpansion
 
@@ -235,13 +235,6 @@ String with word replaced.
 
 ### Private statische Methoden
 
-#### Funktion void AddDoxygenCompounds
-
-| Name | Typ | Beschreibung |
-| :--- | :--- |	:--- |
-| xmlPath | string | |
-| root | XmlDocument | |
-
 #### Funktion void ExecuteProgram
 
 | Name | Typ | Beschreibung |
@@ -338,18 +331,10 @@ TemplateExpander liest eine XML-Datei und transformiert sie anhand der angegeben
 
 ## Optionen
 
-format: Gibt an, welcher Schablonensatz verwendet werden soll. Erster Teil des Schablonennamens. Beispiel: "md.para.txt" (Das Format ist hier "md").
+## format
+
+Gibt an, welcher Vorlagensatz verwendet werden soll. Erster Teil des Vorlagennamens. Beispiel: "md.para.txt". Das Format ist hier "md" und die Vorlage ist für einen Tag oder ein Attribut "para".
 
 ## Version
 
 6
-
-## Noch ein Abschnitt
-
-## Zweck
-
-Nur zum Testen.
-
-## UnterUnterAbschnitt
-
-Das ist ein UnterUnterAbschnitt.

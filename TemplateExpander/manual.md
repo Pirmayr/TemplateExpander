@@ -14,18 +14,10 @@ TemplateExpander liest eine XML-Datei und transformiert sie anhand der angegeben
 
 ## Optionen
 
-* format: Gibt an, welcher Schablonensatz verwendet werden soll. Erster Teil des Schablonennamens. Beispiel: "md.para.txt" (Das Format ist hier "md").
+### format
+
+Gibt an, welcher Vorlagensatz verwendet werden soll. Erster Teil des Vorlagennamens. Beispiel: "md.para.txt". Das Format ist hier "md" und die Vorlage ist für einen Tag oder ein Attribut "para".
 
 ## Version
 
 6
-
-# Noch ein Abschnitt
-
-## Zweck
-
-Nur zum Testen.
-
-### UnterUnterAbschnitt
-
-Das ist ein UnterUnterAbschnitt.

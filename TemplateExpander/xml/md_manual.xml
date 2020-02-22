@@ -8,12 +8,8 @@
 </para><para><ref refid="namespace_template_expander" kindref="compound">TemplateExpander</ref></para><para><heading level="2">Übersicht</heading>
 </para><para><ref refid="namespace_template_expander" kindref="compound">TemplateExpander</ref> format templates-directory xml-path output-path parameters-path</para><para><heading level="2">Beschreibung</heading>
 </para><para><ref refid="namespace_template_expander" kindref="compound">TemplateExpander</ref> liest eine XML-Datei und transformiert sie anhand der angegebenen Schablonen.</para><para><heading level="2">Optionen</heading>
-</para><para><itemizedlist>
-<listitem><para>format: Gibt an, welcher Schablonensatz verwendet werden soll. Erster Teil des Schablonennamens. Beispiel: &quot;md.para.txt&quot; (Das Format ist hier &quot;md&quot;).</para></listitem></itemizedlist>
-</para><para><heading level="2">Version</heading>
-</para><para>6</para><para><heading level="1">Noch ein Abschnitt</heading>
-</para><para><heading level="2">Zweck</heading>
-</para><para>Nur zum Testen.</para><para><heading level="3">UnterUnterAbschnitt</heading>
-</para><para>Das ist ein UnterUnterAbschnitt. </para>    </detaileddescription>
+</para><para><heading level="3">format</heading>
+</para><para>Gibt an, welcher Vorlagensatz verwendet werden soll. Erster Teil des Vorlagennamens. Beispiel: &quot;md.para.txt&quot;. Das Format ist hier &quot;md&quot; und die Vorlage ist für einen Tag oder ein Attribut &quot;para&quot;.</para><para><heading level="2">Version</heading>
+</para><para>6 </para>    </detaileddescription>
   </compounddef>
 </doxygen>

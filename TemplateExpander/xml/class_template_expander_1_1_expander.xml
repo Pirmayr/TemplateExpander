@@ -193,7 +193,7 @@
 <para>Parameters</para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>true if the node ist accepted; otherwise, false.</para></simplesect>
+<simplesect kind="return"><para>If the node is accepted, true is returned; otherwise, false.</para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
