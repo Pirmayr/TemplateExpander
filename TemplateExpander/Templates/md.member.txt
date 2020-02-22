@@ -1,6 +1,12 @@
 ﻿
 
-#### %kind% %type% %name%
+#### %md.kind% %md.type% %md.name%
 
-%parameters%
+%md.brief%
+
+%md.parameters%
+
+%md.returns%
+
+%md.remarks%
 

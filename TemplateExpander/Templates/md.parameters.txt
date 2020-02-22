@@ -2,4 +2,4 @@
 
 | Name | Typ | Beschreibung |
 | :--- | :--- |	:--- |
-%parameter%
+%md.parameter%

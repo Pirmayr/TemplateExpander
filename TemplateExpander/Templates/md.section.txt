@@ -1,6 +1,6 @@
 ﻿
 
-### %title%%kind%
+### %md.kind%
 
-%member%
+%md.member%
 

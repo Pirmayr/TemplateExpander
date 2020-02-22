@@ -1,6 +1,0 @@
-
-
-\subsubsection*{%kind%}
-
-%para%
-

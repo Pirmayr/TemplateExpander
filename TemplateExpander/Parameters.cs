@@ -5,23 +5,23 @@ namespace TemplateExpander
 {
   public class Parameters : Dictionary<string, Strings>
   {
-    public const char SeparatorValues = '|';
+    private const char SeparatorValues = '|';
 
     public static Parameters ReadParameters(string path, string target, string format)
     {
-      Parameters result = new Parameters();
-      foreach (string currentLine in File.ReadAllLines(path))
+      var result = new Parameters();
+      foreach (var currentLine in File.ReadAllLines(path))
       {
-        string[] currentItems = currentLine.Split(';');
+        var currentItems = currentLine.Split(';');
         if (currentItems.Length == 5)
         {
-          string currentTarget = currentItems[0];
-          string currentFormat = currentItems[1];
+          var currentTarget = currentItems[0];
+          var currentFormat = currentItems[1];
           if (Accept(target, currentTarget, format, currentFormat))
           {
-            string currentName = currentItems[2];
-            string currentKey = currentItems[3];
-            string currentValue = currentItems[4];
+            var currentName = currentItems[2];
+            var currentKey = currentItems[3];
+            var currentValue = currentItems[4];
             if (!result.ContainsKey(currentName))
             {
               result.Add(currentName, new Strings());
@@ -41,16 +41,11 @@ namespace TemplateExpander
       return result;
     }
 
-    public static bool Accept(string target, string currentTarget, string format, string currentFormat)
-    {
-      return (currentTarget == "*" || target == currentTarget) && (currentFormat == "*" || format == currentFormat);
-    }
-
     public string Get(string name, string key, string defaultValue)
     {
-      if (TryGetValue(name, out Strings section))
+      if (TryGetValue(name, out var section))
       {
-        if (section.TryGetValue(key, out string result))
+        if (section.TryGetValue(key, out var result))
         {
           return result;
         }
@@ -60,12 +55,17 @@ namespace TemplateExpander
 
     public Strings Get(string name)
     {
-      return TryGetValue(name, out Strings result) ? result : new Strings();
+      return TryGetValue(name, out var result) ? result : new Strings();
     }
 
     public string[] GetValues(string name, string key, string defaultValue)
     {
       return Get(name, key, defaultValue).Split(SeparatorValues);
+    }
+
+    private static bool Accept(string target, string currentTarget, string format, string currentFormat)
+    {
+      return (currentTarget == "*" || target == currentTarget) && (currentFormat == "*" || format == currentFormat);
     }
   }
 }

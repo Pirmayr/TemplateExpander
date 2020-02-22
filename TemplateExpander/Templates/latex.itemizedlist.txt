@@ -1,6 +1,0 @@
-
-
-\begin{itemize}
-%listitem%
-\end{itemize}
-

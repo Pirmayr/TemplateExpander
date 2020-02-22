@@ -4,11 +4,13 @@ Version 1
 
 ## Klasse TemplateExpander::Expander
 
-### private-static-attrib
+### Private Konstanten
 
 #### variable const string DefaultFilter
 
 #### variable const string DelimiterVariable
+
+The delimiter for variables in templates.
 
 #### variable const string ExtensionTemplate
 
@@ -19,6 +21,8 @@ Version 1
 #### variable const string NameReplacement
 
 #### variable const char SeparatorFormat
+
+The character used for separating format from tag in variable-names.
 
 #### variable const string ValueName
 
@@ -39,10 +43,16 @@ Version 1
 
 #### Funktion bool Accept
 
+Checks, if the node is accepted for processing.
+
 | Name | Typ | Beschreibung |
 | :--- | :--- |	:--- |
 | node | XmlNode | Node |
 | parameters | Parameters | Parameters |
+
+Rückgabewert
+
+true if the node ist accepted; otherwise, false.
 
 #### Funktion void AddExpansion
 
@@ -60,7 +70,6 @@ Version 1
 | format | string | |
 | nodes | IEnumerable | |
 | isValueTemplate | bool | |
-| prefixVariable | bool | |
 | expansions | Strings | |
 | parameters | Parameters | |
 | templates | Strings | |
@@ -68,10 +77,16 @@ Version 1
 
 #### Funktion string CleanValue
 
+Cleans string.
+
 | Name | Typ | Beschreibung |
 | :--- | :--- |	:--- |
 | value | string | String to be cleaned. |
 | removeCarriageReturn | bool | Should carriage-returns be removed by replacing them with blanks? |
+
+Rückgabewert
+
+Cleaned string.
 
 #### Funktion string Expansion
 
@@ -85,9 +100,18 @@ Version 1
 
 #### Funktion HashSet< string > GetFormats
 
+Gets the requested formats from the given variables.
+
 | Name | Typ | Beschreibung |
 | :--- | :--- |	:--- |
 | variables | HashSet< string > | Variables |
+| defaultFormat | string | A format, that is always contained in the result. |
+
+Rückgabewert
+
+The requested formats.
+
+Example: Inmdtoc:headingthe formatmdtocis requested for the variableheading.
 
 #### Funktion string GetTemplate
 
@@ -99,21 +123,39 @@ Version 1
 
 #### Funktion HashSet< string > GetVariables
 
+Gets the variables contained in a text.
+
 | Name | Typ | Beschreibung |
 | :--- | :--- |	:--- |
-| text | string | |
+| text | string | Text to be searched for variables. |
+
+Rückgabewert
+
+The variables found in the text.
 
 #### Funktion Strings ReadTemplates
+
+Reads all template-files in a directory.
 
 | Name | Typ | Beschreibung |
 | :--- | :--- |	:--- |
 | templatesDirectory | string | Directory with template-files. |
 
+Rückgabewert
+
+A dictionary with the templates read.
+
+The keys of the dictionary are the filenames (without extension) of the template-files. The keys in turn are the names of nodes or attributes in the XML-file.
+
 #### Funktion string RemoveVariables
+
+Removes unused variables from the given text.
 
 | Name | Typ | Beschreibung |
 | :--- | :--- |	:--- |
 | text | string | Removes unused variables from the given text. |
+
+This is a remark.
 
 #### Funktion string ReplaceExhaustive
 
@@ -125,133 +167,7 @@ Version 1
 
 #### Funktion string ReplaceWord
 
-| Name | Typ | Beschreibung |
-| :--- | :--- |	:--- |
-| text | this string | Text |
-| word | string | Word |
-| replacement | string | Replacement |
-| options | RegexOptions | Options |
-
-### private-static-attrib
-
-#### variable const string DefaultFilter
-
-#### variable const string DelimiterVariable
-
-#### variable const string ExtensionTemplate
-
-#### variable const string NameAlias
-
-#### variable const string NameFilter
-
-#### variable const string NameReplacement
-
-#### variable const char SeparatorFormat
-
-#### variable const string ValueName
-
-#### variable const string VariableNameValue
-
-### Öffentliche statische Methoden
-
-#### Funktion string Expansion
-
-| Name | Typ | Beschreibung |
-| :--- | :--- |	:--- |
-| format | string | |
-| templatesDirectory | string | |
-| root | XmlNode | |
-| parameters | Parameters | |
-
-### Private statische Methoden
-
-#### Funktion bool Accept
-
-| Name | Typ | Beschreibung |
-| :--- | :--- |	:--- |
-| node | XmlNode | Node |
-| parameters | Parameters | Parameters |
-
-#### Funktion void AddExpansion
-
-| Name | Typ | Beschreibung |
-| :--- | :--- |	:--- |
-| expansions | Strings | |
-| key | string | |
-| value | string | |
-| parameters | Parameters | |
-
-#### Funktion void AddExpansions
-
-| Name | Typ | Beschreibung |
-| :--- | :--- |	:--- |
-| format | string | |
-| nodes | IEnumerable | |
-| isValueTemplate | bool | |
-| prefixVariable | bool | |
-| expansions | Strings | |
-| parameters | Parameters | |
-| templates | Strings | |
-| stringsStack | StringsStack | |
-
-#### Funktion string CleanValue
-
-| Name | Typ | Beschreibung |
-| :--- | :--- |	:--- |
-| value | string | String to be cleaned. |
-| removeCarriageReturn | bool | Should carriage-returns be removed by replacing them with blanks? |
-
-#### Funktion string Expansion
-
-| Name | Typ | Beschreibung |
-| :--- | :--- |	:--- |
-| format | string | |
-| node | XmlNode | |
-| parameters | Parameters | |
-| templates | Strings | |
-| expansionsStack | StringsStack | |
-
-#### Funktion HashSet< string > GetFormats
-
-| Name | Typ | Beschreibung |
-| :--- | :--- |	:--- |
-| variables | HashSet< string > | Variables |
-
-#### Funktion string GetTemplate
-
-| Name | Typ | Beschreibung |
-| :--- | :--- |	:--- |
-| templateSet | string | |
-| tag | string | |
-| templates | Strings | |
-
-#### Funktion HashSet< string > GetVariables
-
-| Name | Typ | Beschreibung |
-| :--- | :--- |	:--- |
-| text | string | |
-
-#### Funktion Strings ReadTemplates
-
-| Name | Typ | Beschreibung |
-| :--- | :--- |	:--- |
-| templatesDirectory | string | Directory with template-files. |
-
-#### Funktion string RemoveVariables
-
-| Name | Typ | Beschreibung |
-| :--- | :--- |	:--- |
-| text | string | Removes unused variables from the given text. |
-
-#### Funktion string ReplaceExhaustive
-
-| Name | Typ | Beschreibung |
-| :--- | :--- |	:--- |
-| value | string | |
-| searchString | string | |
-| replacement | string | |
-
-#### Funktion string ReplaceWord
+Replaces word in text.
 
 | Name | Typ | Beschreibung |
 | :--- | :--- |	:--- |
@@ -259,23 +175,18 @@ Version 1
 | word | string | Word |
 | replacement | string | Replacement |
 | options | RegexOptions | Options |
+
+Rückgabewert
+
+String with word replaced.
 
 ## Klasse TemplateExpander::Parameters
 
-### public-static-attrib
+### Private Konstanten
 
 #### variable const char SeparatorValues
 
 ### Öffentliche statische Methoden
-
-#### Funktion bool Accept
-
-| Name | Typ | Beschreibung |
-| :--- | :--- |	:--- |
-| target | string | |
-| currentTarget | string | |
-| format | string | |
-| currentFormat | string | |
 
 #### Funktion Parameters ReadParameters
 
@@ -287,12 +198,6 @@ Version 1
 
 ### public-func
 
-#### Funktion Strings Get
-
-| Name | Typ | Beschreibung |
-| :--- | :--- |	:--- |
-| name | string | |
-
 #### Funktion string Get
 
 | Name | Typ | Beschreibung |
@@ -301,53 +206,12 @@ Version 1
 | key | string | |
 | defaultValue | string | |
 
-#### Funktion string[] GetValues
-
-| Name | Typ | Beschreibung |
-| :--- | :--- |	:--- |
-| name | string | |
-| key | string | |
-| defaultValue | string | |
-
-### public-static-attrib
-
-#### variable const char SeparatorValues
-
-### Öffentliche statische Methoden
-
-#### Funktion bool Accept
-
-| Name | Typ | Beschreibung |
-| :--- | :--- |	:--- |
-| target | string | |
-| currentTarget | string | |
-| format | string | |
-| currentFormat | string | |
-
-#### Funktion Parameters ReadParameters
-
-| Name | Typ | Beschreibung |
-| :--- | :--- |	:--- |
-| path | string | |
-| target | string | |
-| format | string | |
-
-### public-func
-
 #### Funktion Strings Get
 
 | Name | Typ | Beschreibung |
 | :--- | :--- |	:--- |
 | name | string | |
 
-#### Funktion string Get
-
-| Name | Typ | Beschreibung |
-| :--- | :--- |	:--- |
-| name | string | |
-| key | string | |
-| defaultValue | string | |
-
 #### Funktion string[] GetValues
 
 | Name | Typ | Beschreibung |
@@ -355,44 +219,19 @@ Version 1
 | name | string | |
 | key | string | |
 | defaultValue | string | |
-
-## Klasse TemplateExpander::Program
 
 ### Private statische Methoden
 
-#### Funktion void AddDoxygenCompounds
+#### Funktion bool Accept
 
 | Name | Typ | Beschreibung |
 | :--- | :--- |	:--- |
-| xmlPath | string | |
-| root | XmlDocument | |
+| target | string | |
+| currentTarget | string | |
+| format | string | |
+| currentFormat | string | |
 
-#### Funktion void ExecuteProgram
-
-| Name | Typ | Beschreibung |
-| :--- | :--- |	:--- |
-| command | string | |
-| arguments | string | |
-| workingDirectory | string | |
-
-#### Funktion void Main
-
-| Name | Typ | Beschreibung |
-| :--- | :--- |	:--- |
-| arguments | string[] | |
-
-#### Funktion void OnDataReceived
-
-| Name | Typ | Beschreibung |
-| :--- | :--- |	:--- |
-| sender | object | |
-| e | DataReceivedEventArgs | |
-
-#### Funktion XmlDocument ReadXml
-
-| Name | Typ | Beschreibung |
-| :--- | :--- |	:--- |
-| xmlPath | string | |
+## Klasse TemplateExpander::Program
 
 ### Private statische Methoden
 
@@ -441,20 +280,7 @@ Version 1
 | key | string | |
 | value | string | |
 
-### public-func
-
-#### Funktion void Append
-
-| Name | Typ | Beschreibung |
-| :--- | :--- |	:--- |
-| key | string | |
-| value | string | |
-
 ## Klasse TemplateExpander::StringsStack
-
-### public-func
-
-#### Funktion Strings GetActiveValues
 
 ### public-func
 
@@ -498,14 +324,32 @@ Version 1
 
 ## Documentation
 
-### Name
+## Name
 
-### Übersicht
+TemplateExpander
 
-### Beschreibung
+## Übersicht
 
-### Optionen
+TemplateExpander format templates-directory xml-path output-path parameters-path
 
-### Version
+## Beschreibung
 
-### Noch ein Abschnitt
+TemplateExpander liest eine XML-Datei und transformiert sie anhand der angegebenen Schablonen.
+
+## Optionen
+
+format: Gibt an, welcher Schablonensatz verwendet werden soll. Erster Teil des Schablonennamens. Beispiel: "md.para.txt" (Das Format ist hier "md").
+
+## Version
+
+6
+
+## Noch ein Abschnitt
+
+## Zweck
+
+Nur zum Testen.
+
+## UnterUnterAbschnitt
+
+Das ist ein UnterUnterAbschnitt.

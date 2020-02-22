@@ -1,9 +1,0 @@
-
-
-\begin{tabular}{|c|c|} 
-\hline
-\cellcolor{orange} Name & \cellcolor{orange} Beschreibung \\
-\hline
-%parameteritem%
-\end{tabular}
-

@@ -1,1 +1,1 @@
-﻿| %name% | %type% | %brief% |
+﻿| %md.name% | %md.type% | %md.brief% |

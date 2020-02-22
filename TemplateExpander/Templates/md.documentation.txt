@@ -4,4 +4,4 @@
 
 Version 1
 
-%compound%
+%md.compound%
