@@ -46,6 +46,8 @@ namespace TemplateExpander
           {
             var parameters = Parameters.ReadParameters(optionsPath, currentTarget, currentFormat);
             var templatesDirectory = optionsDirectory + parameters.Get("option", "templates-directory", "");
+            var xslPath = optionsDirectory + parameters.Get("option", "xsl-path", "");
+            var intermediateXmlPath = optionsDirectory + parameters.Get("option", "intermediate-xml-path", "");
             var xmlPath = optionsDirectory + parameters.Get("option", "xml-path", "");
             var outputDirectory = optionsDirectory + parameters.Get("option", "output-directory", "");
             var preCommandPath = parameters.Get("option", "pre-command-path", "");
@@ -61,7 +63,7 @@ namespace TemplateExpander
               ExecuteProgram(preCommandPath, preCommandArguments, optionsDirectory);
             }
             var outputPath = outputDirectory + Path.GetFileNameWithoutExtension(currentTarget) + "." + currentFormat;
-            File.WriteAllText(outputPath, Expander.Expansion(currentFormat, templatesDirectory, ReadXml(xmlPath), parameters));
+            File.WriteAllText(outputPath, Expander.Expansion(currentFormat, templatesDirectory, ReadXml(xslPath, intermediateXmlPath, xmlPath), parameters));
             if (!string.IsNullOrEmpty(postCommandPath))
             {
               ExecuteProgram(postCommandPath, postCommandArguments, outputDirectory);
@@ -83,18 +85,12 @@ namespace TemplateExpander
       Console.WriteLine(e.Data);
     }
 
-    private static XmlDocument ReadXml(string xmlPath)
+    private static XmlDocument ReadXml(string xslPath, string intermediateXmlPath, string xmlPath)
     {
-      /*
-      XmlDocument root = new XmlDocument();
-      root.LoadXml(File.ReadAllText(xmlPath));
-      AddDoxygenCompounds(xmlPath, root);
-      return root;
-      */
       var transformFromXml = new XslCompiledTransform();
       var xslSettings = new XsltSettings(true, true);
-      transformFromXml.Load("xml/doxygen.xsl", xslSettings, new XmlUrlResolver());
-      transformFromXml.Transform("xml/index.xml", xmlPath);
+      transformFromXml.Load(xslPath, xslSettings, new XmlUrlResolver());
+      transformFromXml.Transform(intermediateXmlPath, xmlPath);
       var root = new XmlDocument();
       root.LoadXml(File.ReadAllText(xmlPath));
       return root;

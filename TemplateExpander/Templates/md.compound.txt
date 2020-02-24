@@ -2,6 +2,8 @@
 
 ## %md.kind% %md.name%
 
+%md.title%
+
 %md.section%
 
 %md.description%

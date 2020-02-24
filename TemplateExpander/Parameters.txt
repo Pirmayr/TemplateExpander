@@ -1,4 +1,6 @@
 *;*;option;templates-directory;Templates/
+*;*;option;xsl-path;xml/doxygen.xsl
+*;*;option;intermediate-xml-path;xml/index.xml
 *;*;option;xml-path;xml/intermediate.xml
 *;*;option;output-directory;doc/
 *;*;option;pre-command-path;./doxygen/doxygen.exe
@@ -8,7 +10,7 @@
 *;*;alias;class;Klasse
 *;*;alias;file;Datei
 *;*;alias;function;Funktion
-*;*;alias;md_manual;Documentation
+*;*;alias;md_manual;Manual
 *;*;alias;namespace;Namensraum
 *;*;alias;page;
 *;*;alias;private-attrib;Private Konstanten

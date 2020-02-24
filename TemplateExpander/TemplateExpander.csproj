@@ -63,6 +63,12 @@
     <Content Include="Templates\md.compound.txt" />
     <Content Include="Templates\md.description.txt" />
     <Content Include="Templates\md.documentation.txt" />
+    <Content Include="Templates\md.title.txt" />
+    <Content Include="Templates\md.heading4.txt" />
+    <Content Include="Templates\md.heading2.txt" />
+    <Content Include="Templates\md.heading5.txt" />
+    <Content Include="Templates\md.heading3.txt" />
+    <Content Include="Templates\md.heading1.txt" />
     <Content Include="Templates\md.member.txt" />
     <Content Include="Templates\md.parameter.txt" />
     <Content Include="Templates\md.parameters.txt" />

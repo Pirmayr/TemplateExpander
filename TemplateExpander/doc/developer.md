@@ -4,7 +4,7 @@ Version 1
 
 ## Klasse TemplateExpander::Expander
 
-### Private Konstanten
+### private-static-attrib
 
 #### variable const string DefaultFilter
 
@@ -182,7 +182,7 @@ String with word replaced.
 
 ## Klasse TemplateExpander::Parameters
 
-### Private Konstanten
+### private-static-attrib
 
 #### variable const char SeparatorValues
 
@@ -198,6 +198,12 @@ String with word replaced.
 
 ### public-func
 
+#### Funktion Strings Get
+
+| Name | Typ | Beschreibung |
+| :--- | :--- |	:--- |
+| name | string | |
+
 #### Funktion string Get
 
 | Name | Typ | Beschreibung |
@@ -205,12 +211,6 @@ String with word replaced.
 | name | string | |
 | key | string | |
 | defaultValue | string | |
-
-#### Funktion Strings Get
-
-| Name | Typ | Beschreibung |
-| :--- | :--- |	:--- |
-| name | string | |
 
 #### Funktion string[] GetValues
 
@@ -260,6 +260,8 @@ String with word replaced.
 
 | Name | Typ | Beschreibung |
 | :--- | :--- |	:--- |
+| xslPath | string | |
+| intermediateXmlPath | string | |
 | xmlPath | string | |
 
 ## Klasse TemplateExpander::Strings
@@ -315,7 +317,9 @@ String with word replaced.
 
 ## Datei StringsStack.cs
 
-## Documentation
+## Manual
+
+# TemplateExpander
 
 ## Name
 
@@ -331,9 +335,13 @@ TemplateExpander liest eine XML-Datei und transformiert sie anhand der angegeben
 
 ## Optionen
 
-## format
+### Format
 
-Gibt an, welcher Vorlagensatz verwendet werden soll. Erster Teil des Vorlagennamens. Beispiel: "md.para.txt". Das Format ist hier "md" und die Vorlage ist für einen Tag oder ein Attribut "para".
+Bestimmt den Vorlagensatz. Das Format ist der erste Teil des Vorlagennamens. Beispiel: "md.para.txt". Das Format ist hier "md" und die Vorlage ist für einen Tag oder ein Attribut "para" gedacht. Es können mehrere Formate, die durch ";" getrennt sind, angegeben werden.
+
+### Target
+
+Gibt die "Zielgruppe" für die Dokumentation an. Typische Zielgruppen sind "developer" und "user". Es können mehrere Zielgruppen, die durch ";" getrennt sind, angegeben werden.
 
 ## Version
 

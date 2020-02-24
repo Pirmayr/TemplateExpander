@@ -1,15 +1,31 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="md_manual" kind="page">
     <compoundname>md_manual</compoundname>
     <title>TemplateExpander</title>
+    <briefdescription>
+    </briefdescription>
     <detaileddescription>
-<para><heading level="2">Name</heading>
-</para><para><ref refid="namespace_template_expander" kindref="compound">TemplateExpander</ref></para><para><heading level="2">Übersicht</heading>
-</para><para><ref refid="namespace_template_expander" kindref="compound">TemplateExpander</ref> format templates-directory xml-path output-path parameters-path</para><para><heading level="2">Beschreibung</heading>
-</para><para><ref refid="namespace_template_expander" kindref="compound">TemplateExpander</ref> liest eine XML-Datei und transformiert sie anhand der angegebenen Schablonen.</para><para><heading level="2">Optionen</heading>
-</para><para><heading level="3">format</heading>
-</para><para>Gibt an, welcher Vorlagensatz verwendet werden soll. Erster Teil des Vorlagennamens. Beispiel: &quot;md.para.txt&quot;. Das Format ist hier &quot;md&quot; und die Vorlage ist für einen Tag oder ein Attribut &quot;para&quot;.</para><para><heading level="2">Version</heading>
-</para><para>6 </para>    </detaileddescription>
+<para><heading level="1">Name</heading>
+</para>
+<para><ref refid="namespace_template_expander" kindref="compound">TemplateExpander</ref></para>
+<para><heading level="1">Übersicht</heading>
+</para>
+<para><ref refid="namespace_template_expander" kindref="compound">TemplateExpander</ref> format templates-directory xml-path output-path parameters-path</para>
+<para><heading level="1">Beschreibung</heading>
+</para>
+<para><ref refid="namespace_template_expander" kindref="compound">TemplateExpander</ref> liest eine XML-Datei und transformiert sie anhand der angegebenen Schablonen.</para>
+<para><heading level="1">Optionen</heading>
+</para>
+<para><heading level="2">Format</heading>
+</para>
+<para>Bestimmt den Vorlagensatz. Das Format ist der erste Teil des Vorlagennamens. Beispiel: &quot;md.para.txt&quot;. Das Format ist hier &quot;md&quot; und die Vorlage ist für einen Tag oder ein Attribut &quot;para&quot; gedacht. Es können mehrere Formate, die durch &quot;;&quot; getrennt sind, angegeben werden.</para>
+<para><heading level="2">Target</heading>
+</para>
+<para>Gibt die &quot;Zielgruppe&quot; für die Dokumentation an. Typische Zielgruppen sind &quot;developer&quot; und &quot;user&quot;. Es können mehrere Zielgruppen, die durch &quot;;&quot; getrennt sind, angegeben werden.</para>
+<para><heading level="1">Version</heading>
+</para>
+<para>6 </para>
+    </detaileddescription>
   </compounddef>
 </doxygen>

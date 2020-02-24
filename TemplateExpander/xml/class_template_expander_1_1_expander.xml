@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
-  <compounddef id="class_template_expander_1_1_expander" kind="class" prot="package">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="class_template_expander_1_1_expander" kind="class" language="C#" prot="package">
     <compoundname>TemplateExpander::Expander</compoundname>
-      <sectiondef kind="private-attrib">
-      <memberdef kind="variable" id="class_template_expander_1_1_expander_a76080e78e0bfcfb463225ff74f473761_1a76080e78e0bfcfb463225ff74f473761" prot="private" static="no" mutable="no">
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="class_template_expander_1_1_expander_1a76080e78e0bfcfb463225ff74f473761" prot="private" static="yes" mutable="no">
         <type>const string</type>
         <definition>const string DefaultFilter</definition>
         <argsstring></argsstring>
@@ -15,23 +15,24 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/pic/Projects/TemplateExpander/TemplateExpander/Expander.cs" line="13" column="1" bodyfile="/Users/pic/Projects/TemplateExpander/TemplateExpander/Expander.cs" bodystart="13" bodyend="-1"/>
+        <location file="Expander.cs" line="13" column="26" bodyfile="Expander.cs" bodystart="13" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="class_template_expander_1_1_expander_a50e884e9b667c17309be3d96bae3ef10_1a50e884e9b667c17309be3d96bae3ef10" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="class_template_expander_1_1_expander_1a50e884e9b667c17309be3d96bae3ef10" prot="private" static="yes" mutable="no">
         <type>const string</type>
         <definition>const string DelimiterVariable</definition>
         <argsstring></argsstring>
         <name>DelimiterVariable</name>
         <initializer>= &quot;%&quot;</initializer>
         <briefdescription>
-<para>The delimiter for variables in templates.</para>        </briefdescription>
+<para>The delimiter for variables in templates. </para>
+        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/pic/Projects/TemplateExpander/TemplateExpander/Expander.cs" line="16" column="1" bodyfile="/Users/pic/Projects/TemplateExpander/TemplateExpander/Expander.cs" bodystart="16" bodyend="-1"/>
+        <location file="Expander.cs" line="16" column="26" bodyfile="Expander.cs" bodystart="16" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="class_template_expander_1_1_expander_a3369edc60fa3903a6f0fb6171822f2d9_1a3369edc60fa3903a6f0fb6171822f2d9" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="class_template_expander_1_1_expander_1a3369edc60fa3903a6f0fb6171822f2d9" prot="private" static="yes" mutable="no">
         <type>const string</type>
         <definition>const string ExtensionTemplate</definition>
         <argsstring></argsstring>
@@ -43,9 +44,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/pic/Projects/TemplateExpander/TemplateExpander/Expander.cs" line="18" column="1" bodyfile="/Users/pic/Projects/TemplateExpander/TemplateExpander/Expander.cs" bodystart="18" bodyend="-1"/>
+        <location file="Expander.cs" line="18" column="26" bodyfile="Expander.cs" bodystart="18" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="class_template_expander_1_1_expander_a6acbe553432e65e798a503555498b538_1a6acbe553432e65e798a503555498b538" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="class_template_expander_1_1_expander_1a6acbe553432e65e798a503555498b538" prot="private" static="yes" mutable="no">
         <type>const string</type>
         <definition>const string NameAlias</definition>
         <argsstring></argsstring>
@@ -57,9 +58,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/pic/Projects/TemplateExpander/TemplateExpander/Expander.cs" line="19" column="1" bodyfile="/Users/pic/Projects/TemplateExpander/TemplateExpander/Expander.cs" bodystart="19" bodyend="-1"/>
+        <location file="Expander.cs" line="19" column="26" bodyfile="Expander.cs" bodystart="19" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="class_template_expander_1_1_expander_a1a6ce9837af3df6b222517fd0089e351_1a1a6ce9837af3df6b222517fd0089e351" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="class_template_expander_1_1_expander_1a1a6ce9837af3df6b222517fd0089e351" prot="private" static="yes" mutable="no">
         <type>const string</type>
         <definition>const string NameFilter</definition>
         <argsstring></argsstring>
@@ -71,9 +72,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/pic/Projects/TemplateExpander/TemplateExpander/Expander.cs" line="20" column="1" bodyfile="/Users/pic/Projects/TemplateExpander/TemplateExpander/Expander.cs" bodystart="20" bodyend="-1"/>
+        <location file="Expander.cs" line="20" column="26" bodyfile="Expander.cs" bodystart="20" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="class_template_expander_1_1_expander_a43abbe26d7b13008bf2985cafa78c07a_1a43abbe26d7b13008bf2985cafa78c07a" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="class_template_expander_1_1_expander_1a43abbe26d7b13008bf2985cafa78c07a" prot="private" static="yes" mutable="no">
         <type>const string</type>
         <definition>const string NameReplacement</definition>
         <argsstring></argsstring>
@@ -85,23 +86,24 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/pic/Projects/TemplateExpander/TemplateExpander/Expander.cs" line="21" column="1" bodyfile="/Users/pic/Projects/TemplateExpander/TemplateExpander/Expander.cs" bodystart="21" bodyend="-1"/>
+        <location file="Expander.cs" line="21" column="26" bodyfile="Expander.cs" bodystart="21" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="class_template_expander_1_1_expander_a37e81e9a94772497d67ca760edb5b13d_1a37e81e9a94772497d67ca760edb5b13d" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="class_template_expander_1_1_expander_1a37e81e9a94772497d67ca760edb5b13d" prot="private" static="yes" mutable="no">
         <type>const char</type>
         <definition>const char SeparatorFormat</definition>
         <argsstring></argsstring>
         <name>SeparatorFormat</name>
         <initializer>= &apos;.&apos;</initializer>
         <briefdescription>
-<para>The character used for separating format from tag in variable-names. </para>        </briefdescription>
+<para>The character used for separating format from tag in variable-names. </para>
+        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/pic/Projects/TemplateExpander/TemplateExpander/Expander.cs" line="26" column="1" bodyfile="/Users/pic/Projects/TemplateExpander/TemplateExpander/Expander.cs" bodystart="26" bodyend="-1"/>
+        <location file="Expander.cs" line="26" column="24" bodyfile="Expander.cs" bodystart="26" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="class_template_expander_1_1_expander_ae8d59c4a9ce12bd022a29e1f04955282_1ae8d59c4a9ce12bd022a29e1f04955282" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="class_template_expander_1_1_expander_1ae8d59c4a9ce12bd022a29e1f04955282" prot="private" static="yes" mutable="no">
         <type>const string</type>
         <definition>const string ValueName</definition>
         <argsstring></argsstring>
@@ -113,9 +115,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/pic/Projects/TemplateExpander/TemplateExpander/Expander.cs" line="28" column="1" bodyfile="/Users/pic/Projects/TemplateExpander/TemplateExpander/Expander.cs" bodystart="28" bodyend="-1"/>
+        <location file="Expander.cs" line="28" column="26" bodyfile="Expander.cs" bodystart="28" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="class_template_expander_1_1_expander_a59621ce3eb4a1f60e2629ff65d761ae3_1a59621ce3eb4a1f60e2629ff65d761ae3" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="class_template_expander_1_1_expander_1a59621ce3eb4a1f60e2629ff65d761ae3" prot="private" static="yes" mutable="no">
         <type>const string</type>
         <definition>const string VariableNameValue</definition>
         <argsstring></argsstring>
@@ -127,11 +129,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/pic/Projects/TemplateExpander/TemplateExpander/Expander.cs" line="29" column="1" bodyfile="/Users/pic/Projects/TemplateExpander/TemplateExpander/Expander.cs" bodystart="29" bodyend="-1"/>
+        <location file="Expander.cs" line="29" column="26" bodyfile="Expander.cs" bodystart="29" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
-      <memberdef kind="function" id="class_template_expander_1_1_expander_a27a206abd30f31c187f813c5ba453534_1a27a206abd30f31c187f813c5ba453534" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="class_template_expander_1_1_expander_1a27a206abd30f31c187f813c5ba453534" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>string</type>
         <definition>static string Expansion</definition>
         <argsstring>(string format, string templatesDirectory, XmlNode root, Parameters parameters)</argsstring>
@@ -158,11 +160,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/pic/Projects/TemplateExpander/TemplateExpander/Expander.cs" line="31" column="1" bodyfile="/Users/pic/Projects/TemplateExpander/TemplateExpander/Expander.cs" bodystart="31" bodyend="34"/>
+        <location file="Expander.cs" line="31" column="26" bodyfile="Expander.cs" bodystart="31" bodyend="34"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-static-func">
-      <memberdef kind="function" id="class_template_expander_1_1_expander_ae4d2cf67f4533c6c9a4b373b6fd28668_1ae4d2cf67f4533c6c9a4b373b6fd28668" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="class_template_expander_1_1_expander_1ae4d2cf67f4533c6c9a4b373b6fd28668" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
         <definition>static bool Accept</definition>
         <argsstring>(XmlNode node, Parameters parameters)</argsstring>
@@ -176,30 +178,35 @@
           <declname>parameters</declname>
         </param>
         <briefdescription>
-<para>Checks, if the node is accepted for processing.</para>        </briefdescription>
+<para>Checks, if the node is accepted for processing. </para>
+        </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>node</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Node</para></parameterdescription>
+<para>Node</para>
+</parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>parameters</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Parameters</para></parameterdescription>
+<para>Parameters</para>
+</parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>If the node is accepted, true is returned; otherwise, false.</para></simplesect>
-</para>        </detaileddescription>
+<simplesect kind="return"><para>If the node is accepted, true is returned; otherwise, false.</para>
+</simplesect>
+</para>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/pic/Projects/TemplateExpander/TemplateExpander/Expander.cs" line="40" column="1" bodyfile="/Users/pic/Projects/TemplateExpander/TemplateExpander/Expander.cs" bodystart="40" bodyend="50"/>
+        <location file="Expander.cs" line="40" column="25" bodyfile="Expander.cs" bodystart="40" bodyend="50"/>
       </memberdef>
-      <memberdef kind="function" id="class_template_expander_1_1_expander_a35ba1b0b63b200e4c20d37ef9600017e_1a35ba1b0b63b200e4c20d37ef9600017e" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="class_template_expander_1_1_expander_1a35ba1b0b63b200e4c20d37ef9600017e" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
         <definition>static void AddExpansion</definition>
         <argsstring>(Strings expansions, string key, string value, Parameters parameters)</argsstring>
@@ -226,9 +233,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/pic/Projects/TemplateExpander/TemplateExpander/Expander.cs" line="52" column="1" bodyfile="/Users/pic/Projects/TemplateExpander/TemplateExpander/Expander.cs" bodystart="52" bodyend="59"/>
+        <location file="Expander.cs" line="52" column="25" bodyfile="Expander.cs" bodystart="52" bodyend="59"/>
       </memberdef>
-      <memberdef kind="function" id="class_template_expander_1_1_expander_a27238b0146a06ed35474a0416012d529_1a27238b0146a06ed35474a0416012d529" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="class_template_expander_1_1_expander_1a27238b0146a06ed35474a0416012d529" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
         <definition>static void AddExpansions</definition>
         <argsstring>(string format, IEnumerable nodes, bool isValueTemplate, Strings expansions, Parameters parameters, Strings templates, StringsStack stringsStack)</argsstring>
@@ -267,9 +274,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/pic/Projects/TemplateExpander/TemplateExpander/Expander.cs" line="61" column="1" bodyfile="/Users/pic/Projects/TemplateExpander/TemplateExpander/Expander.cs" bodystart="61" bodyend="72"/>
+        <location file="Expander.cs" line="61" column="25" bodyfile="Expander.cs" bodystart="61" bodyend="72"/>
       </memberdef>
-      <memberdef kind="function" id="class_template_expander_1_1_expander_ac2a4c2244e4039887bcb678790d3c491_1ac2a4c2244e4039887bcb678790d3c491" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="class_template_expander_1_1_expander_1ac2a4c2244e4039887bcb678790d3c491" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>string</type>
         <definition>static string CleanValue</definition>
         <argsstring>(string value, bool removeCarriageReturn)</argsstring>
@@ -283,30 +290,35 @@
           <declname>removeCarriageReturn</declname>
         </param>
         <briefdescription>
-<para>Cleans string.</para>        </briefdescription>
+<para>Cleans string. </para>
+        </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>value</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>String to be cleaned.</para></parameterdescription>
+<para>String to be cleaned.</para>
+</parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>removeCarriageReturn</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Should carriage-returns be removed by replacing them with blanks?</para></parameterdescription>
+<para>Should carriage-returns be removed by replacing them with blanks?</para>
+</parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>Cleaned string.</para></simplesect>
-</para>        </detaileddescription>
+<simplesect kind="return"><para>Cleaned string.</para>
+</simplesect>
+</para>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/pic/Projects/TemplateExpander/TemplateExpander/Expander.cs" line="78" column="1" bodyfile="/Users/pic/Projects/TemplateExpander/TemplateExpander/Expander.cs" bodystart="78" bodyend="86"/>
+        <location file="Expander.cs" line="78" column="27" bodyfile="Expander.cs" bodystart="78" bodyend="86"/>
       </memberdef>
-      <memberdef kind="function" id="class_template_expander_1_1_expander_a9079542606625f7f28339e16813866ce_1a9079542606625f7f28339e16813866ce" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="class_template_expander_1_1_expander_1a9079542606625f7f28339e16813866ce" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>string</type>
         <definition>static string Expansion</definition>
         <argsstring>(string format, XmlNode node, Parameters parameters, Strings templates, StringsStack expansionsStack)</argsstring>
@@ -337,9 +349,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/pic/Projects/TemplateExpander/TemplateExpander/Expander.cs" line="88" column="1" bodyfile="/Users/pic/Projects/TemplateExpander/TemplateExpander/Expander.cs" bodystart="88" bodyend="111"/>
+        <location file="Expander.cs" line="88" column="27" bodyfile="Expander.cs" bodystart="88" bodyend="111"/>
       </memberdef>
-      <memberdef kind="function" id="class_template_expander_1_1_expander_aceef75f800bee6423b78ed2bb424304a_1aceef75f800bee6423b78ed2bb424304a" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="class_template_expander_1_1_expander_1aceef75f800bee6423b78ed2bb424304a" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>HashSet&lt; string &gt;</type>
         <definition>static HashSet&lt;string&gt; GetFormats</definition>
         <argsstring>(HashSet&lt; string &gt; variables, string defaultFormat)</argsstring>
@@ -353,30 +365,36 @@
           <declname>defaultFormat</declname>
         </param>
         <briefdescription>
-<para>Gets the requested formats from the given variables.</para>        </briefdescription>
+<para>Gets the requested formats from the given variables. </para>
+        </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>variables</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Variables</para></parameterdescription>
+<para>Variables</para>
+</parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>defaultFormat</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A format, that is always contained in the result.</para></parameterdescription>
+<para>A format, that is always contained in the result.</para>
+</parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>The requested formats.</para></simplesect>
-</para><para>Example: In <emphasis>mdtoc:heading</emphasis> the format <emphasis>mdtoc</emphasis> is requested for the variable <emphasis>heading</emphasis>.</para>        </detaileddescription>
+<simplesect kind="return"><para>The requested formats.</para>
+</simplesect>
+</para>
+<para>Example: In <emphasis>mdtoc:heading</emphasis> the format <emphasis>mdtoc</emphasis> is requested for the variable <emphasis>heading</emphasis>.</para>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/pic/Projects/TemplateExpander/TemplateExpander/Expander.cs" line="118" column="1" bodyfile="/Users/pic/Projects/TemplateExpander/TemplateExpander/Expander.cs" bodystart="118" bodyend="130"/>
+        <location file="Expander.cs" line="118" column="28" bodyfile="Expander.cs" bodystart="118" bodyend="130"/>
       </memberdef>
-      <memberdef kind="function" id="class_template_expander_1_1_expander_a1addeaba4faa55f8cb74e6d12188476c_1a1addeaba4faa55f8cb74e6d12188476c" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="class_template_expander_1_1_expander_1a1addeaba4faa55f8cb74e6d12188476c" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>string</type>
         <definition>static string GetTemplate</definition>
         <argsstring>(string templateSet, string tag, Strings templates)</argsstring>
@@ -399,9 +417,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/pic/Projects/TemplateExpander/TemplateExpander/Expander.cs" line="132" column="1" bodyfile="/Users/pic/Projects/TemplateExpander/TemplateExpander/Expander.cs" bodystart="132" bodyend="135"/>
+        <location file="Expander.cs" line="132" column="27" bodyfile="Expander.cs" bodystart="132" bodyend="135"/>
       </memberdef>
-      <memberdef kind="function" id="class_template_expander_1_1_expander_ad324822cd6c2a460b6f639e7c112a678_1ad324822cd6c2a460b6f639e7c112a678" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="class_template_expander_1_1_expander_1ad324822cd6c2a460b6f639e7c112a678" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>HashSet&lt; string &gt;</type>
         <definition>static HashSet&lt;string&gt; GetVariables</definition>
         <argsstring>(string text)</argsstring>
@@ -411,23 +429,27 @@
           <declname>text</declname>
         </param>
         <briefdescription>
-<para>Gets the variables contained in a text. </para>        </briefdescription>
+<para>Gets the variables contained in a text. </para>
+        </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>text</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Text to be searched for variables.</para></parameterdescription>
+<para>Text to be searched for variables.</para>
+</parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>The variables found in the text.</para></simplesect>
-</para>        </detaileddescription>
+<simplesect kind="return"><para>The variables found in the text.</para>
+</simplesect>
+</para>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/pic/Projects/TemplateExpander/TemplateExpander/Expander.cs" line="142" column="1" bodyfile="/Users/pic/Projects/TemplateExpander/TemplateExpander/Expander.cs" bodystart="142" bodyend="164"/>
+        <location file="Expander.cs" line="142" column="28" bodyfile="Expander.cs" bodystart="142" bodyend="164"/>
       </memberdef>
-      <memberdef kind="function" id="class_template_expander_1_1_expander_aeb48f02519f1ba1be401cd35fbb79a97_1aeb48f02519f1ba1be401cd35fbb79a97" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="class_template_expander_1_1_expander_1aeb48f02519f1ba1be401cd35fbb79a97" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>Strings</type>
         <definition>static Strings ReadTemplates</definition>
         <argsstring>(string templatesDirectory)</argsstring>
@@ -437,23 +459,28 @@
           <declname>templatesDirectory</declname>
         </param>
         <briefdescription>
-<para>Reads all template-files in a directory.</para>        </briefdescription>
+<para>Reads all template-files in a directory. </para>
+        </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>templatesDirectory</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Directory with template-files.</para></parameterdescription>
+<para>Directory with template-files.</para>
+</parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A dictionary with the templates read.</para></simplesect>
-</para><para>The keys of the dictionary are the filenames (without extension) of the template-files. The keys in turn are the names of nodes or attributes in the XML-file.</para>        </detaileddescription>
+<simplesect kind="return"><para>A dictionary with the templates read.</para>
+</simplesect>
+</para>
+<para>The keys of the dictionary are the filenames (without extension) of the template-files. The keys in turn are the names of nodes or attributes in the XML-file.</para>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/pic/Projects/TemplateExpander/TemplateExpander/Expander.cs" line="170" column="1" bodyfile="/Users/pic/Projects/TemplateExpander/TemplateExpander/Expander.cs" bodystart="170" bodyend="178"/>
+        <location file="Expander.cs" line="170" column="28" bodyfile="Expander.cs" bodystart="170" bodyend="178"/>
       </memberdef>
-      <memberdef kind="function" id="class_template_expander_1_1_expander_a4df1a2633fdaba60bb30dced5370d043_1a4df1a2633fdaba60bb30dced5370d043" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="class_template_expander_1_1_expander_1a4df1a2633fdaba60bb30dced5370d043" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>string</type>
         <definition>static string RemoveVariables</definition>
         <argsstring>(string text)</argsstring>
@@ -463,14 +490,16 @@
           <declname>text</declname>
         </param>
         <briefdescription>
-<para>Removes unused variables from the given text.</para>        </briefdescription>
+<para>Removes unused variables from the given text. </para>
+        </briefdescription>
         <detaileddescription>
-<para>This is a remark.</para>        </detaileddescription>
+<para>This is a remark.</para>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/pic/Projects/TemplateExpander/TemplateExpander/Expander.cs" line="182" column="1" bodyfile="/Users/pic/Projects/TemplateExpander/TemplateExpander/Expander.cs" bodystart="182" bodyend="198"/>
+        <location file="Expander.cs" line="182" column="27" bodyfile="Expander.cs" bodystart="182" bodyend="198"/>
       </memberdef>
-      <memberdef kind="function" id="class_template_expander_1_1_expander_a68fc469e324307cc3107d9b2228ef5a8_1a68fc469e324307cc3107d9b2228ef5a8" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="class_template_expander_1_1_expander_1a68fc469e324307cc3107d9b2228ef5a8" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>string</type>
         <definition>static string ReplaceExhaustive</definition>
         <argsstring>(string value, string searchString, string replacement)</argsstring>
@@ -493,9 +522,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/pic/Projects/TemplateExpander/TemplateExpander/Expander.cs" line="200" column="1" bodyfile="/Users/pic/Projects/TemplateExpander/TemplateExpander/Expander.cs" bodystart="200" bodyend="214"/>
+        <location file="Expander.cs" line="200" column="27" bodyfile="Expander.cs" bodystart="200" bodyend="214"/>
       </memberdef>
-      <memberdef kind="function" id="class_template_expander_1_1_expander_a81ee7855e08c651ba5d414d326e05b5a_1a81ee7855e08c651ba5d414d326e05b5a" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="class_template_expander_1_1_expander_1a81ee7855e08c651ba5d414d326e05b5a" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>string</type>
         <definition>static string ReplaceWord</definition>
         <argsstring>(this string text, string word, string replacement, RegexOptions options=RegexOptions.None)</argsstring>
@@ -518,72 +547,79 @@
           <defval>RegexOptions.None</defval>
         </param>
         <briefdescription>
-<para>Replaces word in text.</para>        </briefdescription>
+<para>Replaces word in text. </para>
+        </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>text</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Text</para></parameterdescription>
+<para>Text</para>
+</parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>word</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Word</para></parameterdescription>
+<para>Word</para>
+</parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>replacement</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Replacement</para></parameterdescription>
+<para>Replacement</para>
+</parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>options</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Options</para></parameterdescription>
+<para>Options</para>
+</parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>String with word replaced.</para></simplesect>
-</para>        </detaileddescription>
+<simplesect kind="return"><para>String with word replaced.</para>
+</simplesect>
+</para>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/pic/Projects/TemplateExpander/TemplateExpander/Expander.cs" line="222" column="1" bodyfile="/Users/pic/Projects/TemplateExpander/TemplateExpander/Expander.cs" bodystart="222" bodyend="225"/>
+        <location file="Expander.cs" line="222" column="27" bodyfile="Expander.cs" bodystart="222" bodyend="225"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/Users/pic/Projects/TemplateExpander/TemplateExpander/Expander.cs" line="12" column="1" bodyfile="/Users/pic/Projects/TemplateExpander/TemplateExpander/Expander.cs" bodystart="11" bodyend="226"/>
+    <location file="Expander.cs" line="12" column="1" bodyfile="Expander.cs" bodystart="11" bodyend="226"/>
     <listofallmembers>
-      <member refid="class_template_expander_1_1_expander_ae4d2cf67f4533c6c9a4b373b6fd28668_1ae4d2cf67f4533c6c9a4b373b6fd28668" prot="private" virt="non-virtual"><scope>TemplateExpander::Expander</scope><name>Accept</name></member>
-      <member refid="class_template_expander_1_1_expander_a35ba1b0b63b200e4c20d37ef9600017e_1a35ba1b0b63b200e4c20d37ef9600017e" prot="private" virt="non-virtual"><scope>TemplateExpander::Expander</scope><name>AddExpansion</name></member>
-      <member refid="class_template_expander_1_1_expander_a27238b0146a06ed35474a0416012d529_1a27238b0146a06ed35474a0416012d529" prot="private" virt="non-virtual"><scope>TemplateExpander::Expander</scope><name>AddExpansions</name></member>
-      <member refid="class_template_expander_1_1_expander_ac2a4c2244e4039887bcb678790d3c491_1ac2a4c2244e4039887bcb678790d3c491" prot="private" virt="non-virtual"><scope>TemplateExpander::Expander</scope><name>CleanValue</name></member>
-      <member refid="class_template_expander_1_1_expander_a76080e78e0bfcfb463225ff74f473761_1a76080e78e0bfcfb463225ff74f473761" prot="private" virt="non-virtual"><scope>TemplateExpander::Expander</scope><name>DefaultFilter</name></member>
-      <member refid="class_template_expander_1_1_expander_a50e884e9b667c17309be3d96bae3ef10_1a50e884e9b667c17309be3d96bae3ef10" prot="private" virt="non-virtual"><scope>TemplateExpander::Expander</scope><name>DelimiterVariable</name></member>
-      <member refid="class_template_expander_1_1_expander_a27a206abd30f31c187f813c5ba453534_1a27a206abd30f31c187f813c5ba453534" prot="public" virt="non-virtual"><scope>TemplateExpander::Expander</scope><name>Expansion</name></member>
-      <member refid="class_template_expander_1_1_expander_a9079542606625f7f28339e16813866ce_1a9079542606625f7f28339e16813866ce" prot="private" virt="non-virtual"><scope>TemplateExpander::Expander</scope><name>Expansion</name></member>
-      <member refid="class_template_expander_1_1_expander_a3369edc60fa3903a6f0fb6171822f2d9_1a3369edc60fa3903a6f0fb6171822f2d9" prot="private" virt="non-virtual"><scope>TemplateExpander::Expander</scope><name>ExtensionTemplate</name></member>
-      <member refid="class_template_expander_1_1_expander_aceef75f800bee6423b78ed2bb424304a_1aceef75f800bee6423b78ed2bb424304a" prot="private" virt="non-virtual"><scope>TemplateExpander::Expander</scope><name>GetFormats</name></member>
-      <member refid="class_template_expander_1_1_expander_a1addeaba4faa55f8cb74e6d12188476c_1a1addeaba4faa55f8cb74e6d12188476c" prot="private" virt="non-virtual"><scope>TemplateExpander::Expander</scope><name>GetTemplate</name></member>
-      <member refid="class_template_expander_1_1_expander_ad324822cd6c2a460b6f639e7c112a678_1ad324822cd6c2a460b6f639e7c112a678" prot="private" virt="non-virtual"><scope>TemplateExpander::Expander</scope><name>GetVariables</name></member>
-      <member refid="class_template_expander_1_1_expander_a6acbe553432e65e798a503555498b538_1a6acbe553432e65e798a503555498b538" prot="private" virt="non-virtual"><scope>TemplateExpander::Expander</scope><name>NameAlias</name></member>
-      <member refid="class_template_expander_1_1_expander_a1a6ce9837af3df6b222517fd0089e351_1a1a6ce9837af3df6b222517fd0089e351" prot="private" virt="non-virtual"><scope>TemplateExpander::Expander</scope><name>NameFilter</name></member>
-      <member refid="class_template_expander_1_1_expander_a43abbe26d7b13008bf2985cafa78c07a_1a43abbe26d7b13008bf2985cafa78c07a" prot="private" virt="non-virtual"><scope>TemplateExpander::Expander</scope><name>NameReplacement</name></member>
-      <member refid="class_template_expander_1_1_expander_aeb48f02519f1ba1be401cd35fbb79a97_1aeb48f02519f1ba1be401cd35fbb79a97" prot="private" virt="non-virtual"><scope>TemplateExpander::Expander</scope><name>ReadTemplates</name></member>
-      <member refid="class_template_expander_1_1_expander_a4df1a2633fdaba60bb30dced5370d043_1a4df1a2633fdaba60bb30dced5370d043" prot="private" virt="non-virtual"><scope>TemplateExpander::Expander</scope><name>RemoveVariables</name></member>
-      <member refid="class_template_expander_1_1_expander_a68fc469e324307cc3107d9b2228ef5a8_1a68fc469e324307cc3107d9b2228ef5a8" prot="private" virt="non-virtual"><scope>TemplateExpander::Expander</scope><name>ReplaceExhaustive</name></member>
-      <member refid="class_template_expander_1_1_expander_a81ee7855e08c651ba5d414d326e05b5a_1a81ee7855e08c651ba5d414d326e05b5a" prot="private" virt="non-virtual"><scope>TemplateExpander::Expander</scope><name>ReplaceWord</name></member>
-      <member refid="class_template_expander_1_1_expander_a37e81e9a94772497d67ca760edb5b13d_1a37e81e9a94772497d67ca760edb5b13d" prot="private" virt="non-virtual"><scope>TemplateExpander::Expander</scope><name>SeparatorFormat</name></member>
-      <member refid="class_template_expander_1_1_expander_ae8d59c4a9ce12bd022a29e1f04955282_1ae8d59c4a9ce12bd022a29e1f04955282" prot="private" virt="non-virtual"><scope>TemplateExpander::Expander</scope><name>ValueName</name></member>
-      <member refid="class_template_expander_1_1_expander_a59621ce3eb4a1f60e2629ff65d761ae3_1a59621ce3eb4a1f60e2629ff65d761ae3" prot="private" virt="non-virtual"><scope>TemplateExpander::Expander</scope><name>VariableNameValue</name></member>
+      <member refid="class_template_expander_1_1_expander_1ae4d2cf67f4533c6c9a4b373b6fd28668" prot="private" virt="non-virtual"><scope>TemplateExpander::Expander</scope><name>Accept</name></member>
+      <member refid="class_template_expander_1_1_expander_1a35ba1b0b63b200e4c20d37ef9600017e" prot="private" virt="non-virtual"><scope>TemplateExpander::Expander</scope><name>AddExpansion</name></member>
+      <member refid="class_template_expander_1_1_expander_1a27238b0146a06ed35474a0416012d529" prot="private" virt="non-virtual"><scope>TemplateExpander::Expander</scope><name>AddExpansions</name></member>
+      <member refid="class_template_expander_1_1_expander_1ac2a4c2244e4039887bcb678790d3c491" prot="private" virt="non-virtual"><scope>TemplateExpander::Expander</scope><name>CleanValue</name></member>
+      <member refid="class_template_expander_1_1_expander_1a76080e78e0bfcfb463225ff74f473761" prot="private" virt="non-virtual"><scope>TemplateExpander::Expander</scope><name>DefaultFilter</name></member>
+      <member refid="class_template_expander_1_1_expander_1a50e884e9b667c17309be3d96bae3ef10" prot="private" virt="non-virtual"><scope>TemplateExpander::Expander</scope><name>DelimiterVariable</name></member>
+      <member refid="class_template_expander_1_1_expander_1a27a206abd30f31c187f813c5ba453534" prot="public" virt="non-virtual"><scope>TemplateExpander::Expander</scope><name>Expansion</name></member>
+      <member refid="class_template_expander_1_1_expander_1a9079542606625f7f28339e16813866ce" prot="private" virt="non-virtual"><scope>TemplateExpander::Expander</scope><name>Expansion</name></member>
+      <member refid="class_template_expander_1_1_expander_1a3369edc60fa3903a6f0fb6171822f2d9" prot="private" virt="non-virtual"><scope>TemplateExpander::Expander</scope><name>ExtensionTemplate</name></member>
+      <member refid="class_template_expander_1_1_expander_1aceef75f800bee6423b78ed2bb424304a" prot="private" virt="non-virtual"><scope>TemplateExpander::Expander</scope><name>GetFormats</name></member>
+      <member refid="class_template_expander_1_1_expander_1a1addeaba4faa55f8cb74e6d12188476c" prot="private" virt="non-virtual"><scope>TemplateExpander::Expander</scope><name>GetTemplate</name></member>
+      <member refid="class_template_expander_1_1_expander_1ad324822cd6c2a460b6f639e7c112a678" prot="private" virt="non-virtual"><scope>TemplateExpander::Expander</scope><name>GetVariables</name></member>
+      <member refid="class_template_expander_1_1_expander_1a6acbe553432e65e798a503555498b538" prot="private" virt="non-virtual"><scope>TemplateExpander::Expander</scope><name>NameAlias</name></member>
+      <member refid="class_template_expander_1_1_expander_1a1a6ce9837af3df6b222517fd0089e351" prot="private" virt="non-virtual"><scope>TemplateExpander::Expander</scope><name>NameFilter</name></member>
+      <member refid="class_template_expander_1_1_expander_1a43abbe26d7b13008bf2985cafa78c07a" prot="private" virt="non-virtual"><scope>TemplateExpander::Expander</scope><name>NameReplacement</name></member>
+      <member refid="class_template_expander_1_1_expander_1aeb48f02519f1ba1be401cd35fbb79a97" prot="private" virt="non-virtual"><scope>TemplateExpander::Expander</scope><name>ReadTemplates</name></member>
+      <member refid="class_template_expander_1_1_expander_1a4df1a2633fdaba60bb30dced5370d043" prot="private" virt="non-virtual"><scope>TemplateExpander::Expander</scope><name>RemoveVariables</name></member>
+      <member refid="class_template_expander_1_1_expander_1a68fc469e324307cc3107d9b2228ef5a8" prot="private" virt="non-virtual"><scope>TemplateExpander::Expander</scope><name>ReplaceExhaustive</name></member>
+      <member refid="class_template_expander_1_1_expander_1a81ee7855e08c651ba5d414d326e05b5a" prot="private" virt="non-virtual"><scope>TemplateExpander::Expander</scope><name>ReplaceWord</name></member>
+      <member refid="class_template_expander_1_1_expander_1a37e81e9a94772497d67ca760edb5b13d" prot="private" virt="non-virtual"><scope>TemplateExpander::Expander</scope><name>SeparatorFormat</name></member>
+      <member refid="class_template_expander_1_1_expander_1ae8d59c4a9ce12bd022a29e1f04955282" prot="private" virt="non-virtual"><scope>TemplateExpander::Expander</scope><name>ValueName</name></member>
+      <member refid="class_template_expander_1_1_expander_1a59621ce3eb4a1f60e2629ff65d761ae3" prot="private" virt="non-virtual"><scope>TemplateExpander::Expander</scope><name>VariableNameValue</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>
